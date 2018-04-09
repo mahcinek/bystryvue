@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <q-card  >
-      <q-card-media style="height: 250px;">
+      <q-card-media style="height: 300px;">
         <img src="../assets/zajazd_banderoza_13.jpg">
         <q-card-title slot="overlay" >
           Gastronomia

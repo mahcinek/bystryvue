@@ -3,7 +3,6 @@
     <q-layout-header>
       <q-toolbar
         color="primary"
-        :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
       >
         <q-btn
@@ -12,13 +11,13 @@
           round
           @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
+          v-if=showBtn
         >
-          <q-icon name="menu" />
+          <q-icon name="arrow back" />
         </q-btn>
 
-        <q-toolbar-title>
+        <q-toolbar-title align="center">
           Przewodnik - Dolina bystrzycy
-          <div slot="subtitle"> bystrysoft</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -37,6 +36,7 @@ export default {
   data() {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
+      showBtn: true
     };
   },
   methods: {
