@@ -5,6 +5,7 @@ export default [
     component: () => import('layouts/default'),
     children: [
       { path: '', component: () => import('pages/index') },
+      { path: '/map', component: () => import('pages/Map') },
     ],
   },
 
