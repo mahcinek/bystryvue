@@ -1,15 +1,8 @@
+import Index from '../pages/index';
+import Map from '../pages/Map';
 
 export default [
-  {
-    path: '/',
-    component: () => import('layouts/default'),
-    children: [
-      { path: '', component: () => import('pages/index') },
-    ],
-  },
-
-  { // Always leave this as last one
-    path: '*',
-    component: () => import('pages/404'),
-  },
+  { path: '', component: Index },
+  { path: '/map', component: Map },
+  { path: '*', component: () => import('pages/404') },
 ];
