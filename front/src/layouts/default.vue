@@ -17,7 +17,7 @@
         </q-btn>
 
         <q-toolbar-title align="center">
-          Przewodnik - Dolina bystrzycy
+          Dolina bystrzycy
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>

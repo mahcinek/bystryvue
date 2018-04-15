@@ -1,29 +1,33 @@
 <template>
   <q-page>
-    <CardsList :cards="cards"></CardsList>
+    <MenuCardsList :cards="cards"></MenuCardsList>
   </q-page>
 </template>
 
-<style>
-</style>
 
 <script>
-import CardsList from '../components/CardsList';
+import MenuCardsList from '../components/MenuCardsList';
 
 export default {
   name: 'PageIndex',
   data() {
     return {
       cards: [
+        { title: 'Jak dojechać?', imagePath: '../assets/dojazd.png' },
         { title: 'Mapa', imagePath: '../assets/mapka.jpg' },
-        { title: 'Gastronomia', imagePath: '../assets/zajazd_banderoza_13.jpg' },
+        { title: 'Ścieżki', imagePath: '../assets/sciezki.jpg' },
         { title: 'Ciekawe miejsca', imagePath: '../assets/palac-krobielowice.jpg' },
       ],
     };
   },
   components: {
-    CardsList,
+    MenuCardsList,
   },
 };
 
 </script>
+
+
+<style>
+
+</style>

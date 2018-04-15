@@ -1,15 +1,15 @@
 <template>
 <q-page>
-  <CardsListItem v-for="card in cards"
+  <MenuCardItem  v-for="card in cards"
                  :title="card.title"
                  :imagePath="card.imagePath"
                  :key="card.title">
-  </CardsListItem>
+  </MenuCardItem>
 </q-page>
 </template>
 
 <script>
-import CardsListItem from './CardsListItem';
+import MenuCardItem from './MenuCardItem';
 
 export default {
   name: 'card-list',
@@ -17,11 +17,10 @@ export default {
     cards: [],
   },
   components: {
-    CardsListItem,
+    MenuCardItem,
   },
 };
 </script>
 
 <style scoped>
-
 </style>
