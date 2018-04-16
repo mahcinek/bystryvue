@@ -12,15 +12,19 @@
       data() {
         return {
           paths: [
-            {title: 'Dydaktyczna ścieżka rowerowa', imagePath: '../assets/sciezka-dydaktyczna.jpg', destination: '/pathDescription'},
-            {title: 'Ścieżka Jarnołtów-Ratyń', imagePath: '../assets/jarnoltow-ratyn.jpg', destination: '/pathDescription'},
-            {title: 'Cicha Dolina', imagePath: '../assets/cicha-dolina.jpg', destination: '/pathDescription'},
+            {title: 'Dydaktyczna ścieżka rowerowa', imagePath: '../assets/sciezka-dydaktyczna.jpg', destination: '/pathDescription/1'},
+            {title: 'Ścieżka Jarnołtów-Ratyń', imagePath: '../assets/jarnoltow-ratyn.jpg', destination: '/pathDescription/2'},
+            {title: 'Cicha Dolina', imagePath: '../assets/cicha-dolina.jpg', destination: '/pathDescription/3'},
           ],
         };
       },
       components: {
         MenuCardsList,
       },
+      created(){
+        this.$store.state.example.showBtn = true;
+        this.$store.state.example.pageTitle = 'Oficjalne ścieżki';
+      }
     };
 </script>
 

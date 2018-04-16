@@ -12,15 +12,19 @@
     data() {
       return {
         cards: [
-          { title: 'Zabytki', imagePath: '../assets/zabytki.jpg' },
-          { title: 'Przyroda', imagePath: '../assets/przyroda.jpg' },
-          { title: 'Atrakcje turystyczne', imagePath: '../assets/zajazd-banderoza.jpg' },
+          { title: 'Zabytki', imagePath: '../assets/zabytki.jpg', destination: 'monumentsMenu' },
+          { title: 'Przyroda', imagePath: '../assets/przyroda.jpg', destination: 'naturalAttractionsMenu' },
+          { title: 'Atrakcje turystyczne', imagePath: '../assets/zajazd-banderoza.jpg', destination: 'touristAttractionsMenu' },
         ],
       };
     },
     components: {
       MenuCardsList,
     },
+  created(){
+    this.$store.state.example.showBtn = true;
+    this.$store.state.example.pageTitle = 'Ciekawe miejsca';
+  }
     }
 </script>
 

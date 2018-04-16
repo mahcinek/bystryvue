@@ -6,7 +6,12 @@
           <p>
             {{description}}
           </p>
-        <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary">
+        <q-btn
+          @click="goToArrival"
+          label="Zaprowadź mnie tam"
+          text-color="white"
+          color="secondary"
+          style="width: 100%;">
         </q-btn>
       </q-card>
 </template>
@@ -14,10 +19,16 @@
 <script>
     export default {
       props: {
-        name: String, //tytuł na pasku nawigacji
+        pageTitle: String, //tytuł na pasku nawigacji
         imagePath: String,
         description: String
       },
+      methods: {
+        goToArrival(){
+          this.$router.replace('/arrival');
+        }
+
+      }
     }
 </script>
 

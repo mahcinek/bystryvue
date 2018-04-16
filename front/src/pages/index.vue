@@ -18,11 +18,16 @@ export default {
         { title: 'Ścieżki', imagePath: '../assets/sciezki.jpg',  destination: '/officialPaths' },
         { title: 'Ciekawe miejsca', imagePath: '../assets/palac-krobielowice.jpg', destination: 'interestingPlacesMenu' },
       ],
+      pageTitle: 'Dolina Bystrzycy'
     };
   },
   components: {
     MenuCardsList,
   },
+  created(){
+    this.$store.state.example.showBtn =  false;
+    this.$store.state.example.pageTitle = 'Dolina Bystrzycy';
+  }
 };
 
 </script>

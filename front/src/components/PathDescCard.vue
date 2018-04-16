@@ -28,6 +28,5 @@
 <style scoped>
   p {
     background-color: black;
-    color: white;
   }
 </style>

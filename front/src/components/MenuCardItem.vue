@@ -1,6 +1,6 @@
 <template>
   <div>
-  <q-btn @click="switchCard(destination)" style="width: 100%; padding: 0">
+  <q-btn @click="goTo(destination)" style="width: 100%; padding: 0">
     <q-card square style="width: 100%">
       <q-card-media >
         <img :src=imagePath>
@@ -23,7 +23,7 @@ export default {
     destination: String,
   },
   methods: {
-    switchCard(destination){
+    goTo(destination){
       this.$router.push(destination);
     }
   }
