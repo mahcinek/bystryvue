@@ -34,7 +34,7 @@ export default {
   }
   @media screen and (max-height: 500px) {
     .card{
-      height: 50px;
+      height: 100px;
     }
   }
 </style>
