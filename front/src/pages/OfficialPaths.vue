@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <MenuCardsList class="klasa" :cards="paths"></MenuCardsList>
+    <MenuCardsList :cards="paths"></MenuCardsList>
   </q-page>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-      <q-card color="primay" square style="width: 100%">
+      <q-card color="primary" square style="width: 100%;">
         <q-card-media style="width: 100%">
           <img :src=imagePath>
         </q-card-media>
@@ -25,7 +25,7 @@
       },
       methods: {
         goToArrival(){
-          this.$router.replace('/arrival');
+          this.$router.replace('/map');
         }
 
       }

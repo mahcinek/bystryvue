@@ -1,9 +1,9 @@
 <template>
   <div>
-  <q-btn @click="goTo(destination)" style="width: 100%; padding: 0">
-    <q-card square style="width: 100%">
-      <q-card-media >
-        <img :src=imagePath>
+  <q-btn @click="goTo(destination)" style="width: 100%; padding: 0;">
+    <q-card square style="width: 100%; height: 100%;">
+      <q-card-media class="card">
+        <img :src=imagePath style="height: 100%;">
         <q-card-title slot="overlay">
           {{title}}
         </q-card-title>
@@ -31,12 +31,44 @@ export default {
 </script>
 
 <style scoped>
-  .card{
-    height: 120px;
-  }
   @media screen and (max-height: 500px) {
     .card{
-      height: 90px;
+      height: 110px;
+    }
+  }
+  @media screen and (min-height: 501px) {
+    .card{
+      height: 130px;
+    }
+  }
+  @media screen and (min-height: 551px) {
+    .card{
+      height: 140px;
+    }
+  }
+  @media screen and (min-height: 601px) {
+    .card{
+      height: 150px;
+    }
+  }
+  @media screen and (min-height: 651px) {
+    .card{
+      height: 165px;
+    }
+  }
+  @media screen and (min-height: 701px) {
+    .card{
+      height: 175px;
+    }
+  }
+  @media screen and (min-height: 751px) {
+    .card{
+      height: 185px;
+    }
+  }
+  @media screen and (min-height: 801px) {
+    .card{
+      height: 201px;
     }
   }
 </style>

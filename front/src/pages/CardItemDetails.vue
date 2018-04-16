@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page >
     <CardItemDetails
       :pageTitle="pageTitle"
       :imagePath="imagePath"
