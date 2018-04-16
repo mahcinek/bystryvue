@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <MenuCardsList :cards="cards"></MenuCardsList>
+    <MenuCardsList class="klasa" :cards="cards"></MenuCardsList>
   </q-page>
 </template>
 
@@ -29,6 +29,4 @@ export default {
 
 
 <style>
-
-
 </style>

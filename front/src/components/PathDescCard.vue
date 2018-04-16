@@ -1,5 +1,5 @@
 <template>
-  <q-card square style="width: 100%">
+  <q-card color="primary" square style="width: 100%">
     <q-card-media style="width: 100%;">
       <img :src=upperImagePath>
     </q-card-media>
@@ -9,7 +9,7 @@
     <q-card-media>
       <img :src=lowerImagePath>
     </q-card-media>
-    <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary">
+    <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary" style="width: 100%;">
     </q-btn>
   </q-card>
 </template>
@@ -27,7 +27,6 @@
 
 <style scoped>
   p {
-    background-color: black;
     color: white;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <MenuCardsList :cards="paths"></MenuCardsList>
+    <MenuCardsList class="klasa" :cards="paths"></MenuCardsList>
   </q-page>
 </template>
 
@@ -25,5 +25,4 @@
 </script>
 
 <style scoped>
-
 </style>

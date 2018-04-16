@@ -1,12 +1,12 @@
 <template>
-  <q-card square style="width: 100%">
-    <q-card-media style="width: 100%">
+  <q-card color="primary" square style="width: 100%;">
+    <q-card-media class="card-img">
       <img :src=upperImagePath>
     </q-card-media>
       <p>
         {{ description }}
       </p>
-    <q-card-media style="width: 100%">
+    <q-card-media class="card-img">
       <img :src=lowerImagePath>
     </q-card-media>
   </q-card>
@@ -30,7 +30,9 @@
 
 <style scoped>
   p {
-    background-color: black;
     color: white;
+  }
+  .card-img{
+    width: 100%;
   }
 </style>
