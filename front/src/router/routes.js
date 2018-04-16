@@ -12,7 +12,8 @@ export default [
       { path: '/monumentsMenu', component: () => import('pages/MonumentsMenu') },
       { path: '/naturalAttractionsMenu', component: () => import('pages/NaturalAttractionsMenu') },
       { path: '/touristAttractionsMenu', component: () => import('pages/TouristAttractionsMenu') },
-      { path: '/pathDescription', component: () => import('pages/PathDescription') },
+      { path: '/pathDescription/:id', component: () => import('pages/PathDescription') },
+      { path: '/details/:id', component: () => import('pages/CardItemDetails') },
     ],
   },
 

@@ -17,13 +17,18 @@
         lowerImagePath: '../assets/mapka.jpg',
         description: "Ścieżka została wykonana w roku 2012 we współpracy z Urzędem Miasta i Gminy " +
                            "Kąty Wrocławskie. Trasa ścieżki prowadzi poprzez różnorodne ekosystemy związane" +
-                            " z doliną rzeki Bystrzycy."
+                            " z doliną rzeki Bystrzycy.",
+        pageTitle: 'Cicha Dolina'
       };
     },
     components: {
       PathDescCard,
     },
+    created(){
+      this.$store.state.example.showBtn = true;
+      this.$store.state.example.pageTitle = this.pageTitle;
     }
+  }
 </script>
 
 <style scoped>

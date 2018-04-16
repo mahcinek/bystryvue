@@ -22,9 +22,13 @@
                         "Wrocławskich), liniami wrocławskiego MPK nr 109, 609 i 917, samochodem oraz rowerem.",
           upperImagePath: '../assets/dojazdGora.png' ,
           lowerImagePath: '../assets/dojazdDol.png' ,
+          pageTitle: ''
         };
       },
-
+      created(){
+        this.$store.state.example.showBtn = true;
+        this.$store.state.example.pageTitle =  'Jak dojechać';
+      }
     }
 </script>
 

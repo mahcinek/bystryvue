@@ -1,9 +1,9 @@
 <template>
   <div>
-  <q-btn @click="switchCard(destination)" style="width: 100%; padding: 0;" >
-    <q-card square style="width: 100%;">
-      <q-card-media class="card">
-        <img :src=imagePath style="height: 100%">
+  <q-btn @click="goTo(destination)" style="width: 100%; padding: 0">
+    <q-card square style="width: 100%">
+      <q-card-media >
+        <img :src=imagePath>
         <q-card-title slot="overlay">
           {{title}}
         </q-card-title>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+
+
 export default {
   props: {
     title: String,
@@ -21,7 +23,7 @@ export default {
     destination: String,
   },
   methods: {
-    switchCard(destination){
+    goTo(destination){
       this.$router.push(destination);
     }
   }

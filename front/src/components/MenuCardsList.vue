@@ -2,10 +2,10 @@
 <q-page>
   <MenuCardItem
                   v-for="card in cards"
-                 :title="card.title"
-                 :imagePath="card.imagePath"
-                 :key="card.title"
-                 :destination = "card.destination">
+                  :title="card.title"
+                  :imagePath="card.imagePath"
+                  :key="card.title"
+                  :destination = "card.destination">
   </MenuCardItem>
 </q-page>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   components: {
     MenuCardItem,
-  },
+  }
 };
 </script>
 

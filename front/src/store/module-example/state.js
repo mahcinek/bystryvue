@@ -1,3 +1,4 @@
 export default {
-  currentLocation: 'test',
+  showBtn: true,
+  pageTitle: 'Dolina Bystrzycy'
 };

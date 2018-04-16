@@ -17,8 +17,7 @@
         </q-btn>
 
         <q-toolbar-title align="center">
-          <q-button @click="backToHome">{{title}}
-          </q-button>
+         {{pageTitle}}
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -34,25 +33,21 @@ import { openURL } from 'quasar';
 
 export default {
   name: 'LayoutDefault',
-  data() {
-    return {
-      showBtn: true,
-    };
-  },
   computed: {
-    title() {
-      return this.$store.getters.getCurrentLocation;
+    showBtn: function() {
+      return this.$store.state.example.showBtn
+    },
+    pageTitle: function(){
+      return this.$store.state.example.pageTitle
     }
   },
   methods: {
     openURL,
-    goBack(){
+    goBack() {
       this.$router.go(-1)
-    },
-    backToHome(){
-      this.$router.go('')
     }
   },
+
 };
 </script>
 
