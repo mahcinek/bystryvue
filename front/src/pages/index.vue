@@ -13,10 +13,10 @@ export default {
   data() {
     return {
       cards: [
-        { title: 'Jak dojechać?', imagePath: '../assets/dojazd.png' },
-        { title: 'Mapa', imagePath: '../assets/mapka.jpg' },
-        { title: 'Ścieżki', imagePath: '../assets/sciezki.jpg' },
-        { title: 'Ciekawe miejsca', imagePath: '../assets/palac-krobielowice.jpg' },
+        { title: 'Jak dojechać?', imagePath: '../assets/dojazd.png', destination: '/arrival' },
+        { title: 'Mapa', imagePath: '../assets/mapka.jpg',  destination: '/map' },
+        { title: 'Ścieżki', imagePath: '../assets/sciezki.jpg',  destination: '/officialPaths' },
+        { title: 'Ciekawe miejsca', imagePath: '../assets/palac-krobielowice.jpg', destination: 'interestingPlacesMenu' },
       ],
     };
   },
@@ -29,5 +29,6 @@ export default {
 
 
 <style>
+
 
 </style>

@@ -9,7 +9,7 @@
           flat
           dense
           round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          @click="goBack"
           aria-label="Menu"
           v-if=showBtn
         >
@@ -17,7 +17,8 @@
         </q-btn>
 
         <q-toolbar-title align="center">
-          Dolina bystrzycy
+          <q-button @click="backToHome">{{title}}
+          </q-button>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -35,12 +36,22 @@ export default {
   name: 'LayoutDefault',
   data() {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop,
-      showBtn: true
+      showBtn: true,
     };
+  },
+  computed: {
+    title() {
+      return this.$store.getters.getCurrentLocation;
+    }
   },
   methods: {
     openURL,
+    goBack(){
+      this.$router.go(-1)
+    },
+    backToHome(){
+      this.$router.go('')
+    }
   },
 };
 </script>
