@@ -4,7 +4,7 @@
       <q-toolbar
         color="primary"
         :inverted="$q.theme === 'ios'"
-      >
+        >
         <q-btn
           flat
           dense
@@ -22,7 +22,7 @@
       </q-toolbar>
     </q-layout-header>
 
-    <q-page-container>
+    <q-page-container style="padding-top:31px">
       <router-view />
     </q-page-container>
   </q-layout>
