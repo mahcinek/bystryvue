@@ -4,7 +4,6 @@
       :pageTitle="pageTitle"
       :imagePath="imagePath"
       :description="description">
-
     </CardItemDetails>
   </q-page>
 </template>

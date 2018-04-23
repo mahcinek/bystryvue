@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <MenuCardsList :cards="paths"></MenuCardsList>
+    <MenuCardListTriPic :cards="paths"></MenuCardListTriPic>
   </q-page>
 </template>
 
 <script>
-  import MenuCardsList from '../components/MenuCardsList';
+  import MenuCardListTriPic from '../components/MenuCardListTriPic';
 
     export default {
       name: "official-paths",
@@ -19,7 +19,7 @@
         };
       },
       components: {
-        MenuCardsList,
+        MenuCardListTriPic,
       },
       created(){
         this.$store.state.example.showBtn = true;

@@ -1,19 +1,21 @@
 <template>
-      <q-card color="primary" square style="width: 100%;">
+  <q-page color="primary" style="position: relative; height: 92vh;">
+      <q-card color="primary" square style="width: 100%; height: 100%;">
         <q-card-media style="width: 100%">
           <img :src=imagePath>
         </q-card-media>
-          <p>
-            {{description}}
-          </p>
+        <p>
+          {{description}}
+        </p>
         <q-btn
           @click="goToArrival"
           label="Zaprowadź mnie tam"
           text-color="white"
           color="secondary"
-          style="width: 100%;">
+          style="width: 100%; position:fixed; bottom: 0px;">
         </q-btn>
       </q-card>
+  </q-page>
 </template>
 
 <script>
@@ -27,7 +29,6 @@
         goToArrival(){
           this.$router.replace('/map');
         }
-
       }
     }
 </script>

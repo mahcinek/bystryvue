@@ -15,9 +15,8 @@ import MenuCardItem from './MenuCardItem';
 
 export default {
   name: 'card-list',
-  props: {
-    cards: [],
-  },
+  props: ['cards']
+,
   components: {
     MenuCardItem,
   }

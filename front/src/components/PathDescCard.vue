@@ -1,16 +1,18 @@
 <template>
-  <q-card color="primary" square style="width: 100%">
+  <q-card color="primary" square style="width: 100%; height: 90vh;">
     <q-card-media style="width: 100%;">
       <img :src=upperImagePath>
     </q-card-media>
       <p>
         {{description}}
       </p>
-    <q-card-media>
-      <img :src=lowerImagePath>
-    </q-card-media>
-    <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary" style="width: 100%;">
-    </q-btn>
+    <div style="position:fixed; bottom: 0px;">
+      <q-card-media>
+        <img :src=lowerImagePath>
+      </q-card-media>
+      <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary" style="width: 100%;">
+      </q-btn>
+    </div>
   </q-card>
 </template>
 

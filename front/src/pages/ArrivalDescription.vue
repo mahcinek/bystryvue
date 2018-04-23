@@ -1,15 +1,17 @@
 <template>
-  <q-card color="primary" square style="width: 100%;">
+  <q-page color="primary" style="position: relative;  height: 92vh;">
+  <q-card color="primary" square style="width: 100%; height: 100%;">
     <q-card-media class="card-img">
       <img :src=upperImagePath>
     </q-card-media>
       <p>
         {{ description }}
       </p>
-    <q-card-media class="card-img">
+    <q-card-media class="card-img" style="position: absolute; bottom: 0px;">
       <img :src=lowerImagePath>
     </q-card-media>
   </q-card>
+  </q-page>
 </template>
 
 <script>
