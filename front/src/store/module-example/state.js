@@ -1,3 +1,4 @@
 export default {
-  counter: 2,
+  showBtn: true,
+  pageTitle: 'Dolina Bystrzycy'
 };
