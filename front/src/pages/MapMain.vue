@@ -1,15 +1,16 @@
 <template>
 
-  <q-page>
-    <GmapMap
+  <q-page fullscreen>
+  <GmapMap
   :center="{lat:51.000708, lng:16.753288}"
   :zoom="12"
   map-type-id="terrain"
   style="
     width: 100%;
-    height: 100%;
-    position: absolute;
-    fullscreen: true"
+    height: calc(100% - 40px);
+    position: fixed;
+    bottom: 0px;
+    "
 >
 </GmapMap>
 </q-page>
@@ -26,5 +27,6 @@ export default {
 </script>
 
 <style scoped>
+  
 
 </style>

@@ -22,7 +22,7 @@
       </q-toolbar>
     </q-layout-header>
 
-    <q-page-container style="padding-top:31px">
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
