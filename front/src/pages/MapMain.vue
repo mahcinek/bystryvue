@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'map',
+  name: 'mapMain',
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Mapa';
