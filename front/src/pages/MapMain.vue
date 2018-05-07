@@ -12,6 +12,11 @@
     bottom: 0px;
     "
 >
+    <GmapMarker
+      :position="{lat:51.000708, lng:16.753288}"
+      :clickable="true"
+      @click="consoleLog"
+    />
 </GmapMap>
 </q-page>
 </template>
@@ -22,11 +27,19 @@ export default {
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Mapa';
+  },
+  methods:{
+    consoleLog: function(){
+      console.log("Klikniete");
+    }
   }
+
+
 };
+
 </script>
 
 <style scoped>
-  
+
 
 </style>
