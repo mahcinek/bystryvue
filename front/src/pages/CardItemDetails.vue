@@ -2,7 +2,6 @@
   <q-page >
     <CardItemDetails
       :pageTitle="pageTitle"
-      :imagePath="imagePath"
       :description="description">
     </CardItemDetails>
   </q-page>

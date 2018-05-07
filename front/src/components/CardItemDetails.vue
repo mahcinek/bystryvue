@@ -1,9 +1,19 @@
 <template>
   <q-page color="primary" style="position: relative; height: 92vh;">
       <q-card color="primary" square style="width: 100%; height: 100%;">
-        <q-card-media style="width: 100%">
-          <img :src=imagePath>
-        </q-card-media>
+        <!--<q-card-media style="width: 100%">-->
+          <!--<img :src=imagePath>-->
+        <!--</q-card-media>-->
+        <q-carousel
+          arrows
+          infinite
+          autoplay
+          style="width: 100%; height: 45%;"
+          >
+          <q-carousel-slide img-src='../assets/karczma-rzym.jpg' />
+          <q-carousel-slide img-src='../assets/karczma-rzym.jpg' />
+          <q-carousel-slide img-src='../assets/karczma-rzym.jpg' />
+        </q-carousel>
         <p>
           {{description}}
         </p>
@@ -22,7 +32,7 @@
     export default {
       props: {
         pageTitle: String, //tytuł na pasku nawigacji
-        imagePath: String,
+        //imagePath: String,
         description: String
       },
       methods: {
