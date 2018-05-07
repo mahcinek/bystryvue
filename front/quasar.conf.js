@@ -68,7 +68,8 @@ module.exports = function (ctx) {
         'QCarousel',
         'QCarouselSlide',
         'QCarouselControl',
-        'QModal'
+        'QModal',
+        'AppFullscreen'
       ],
       directives: [
         'Ripple'
