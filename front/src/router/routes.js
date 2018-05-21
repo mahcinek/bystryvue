@@ -1,3 +1,5 @@
+import Index from '../pages/index';
+import MapMain from '../pages/MapMain';
 
 export default [
   {
@@ -5,7 +7,7 @@ export default [
     component: () => import('layouts/default'),
     children: [
       { path: '', component: () => import('pages/index') },
-      { path: '/map', component: () => import('pages/Map') },
+      { path: '/map', component: () => import('pages/MapMain') },
       { path: '/arrival', component: () => import('pages/ArrivalDescription') },
       { path: '/officialPaths', component: () => import('pages/OfficialPaths') },
       { path: '/interestingPlacesMenu', component: () => import('pages/InterestingPlacesMenu') },

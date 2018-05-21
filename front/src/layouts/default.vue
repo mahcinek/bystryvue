@@ -4,7 +4,7 @@
       <q-toolbar
         color="primary"
         :inverted="$q.theme === 'ios'"
-      >
+        >
         <q-btn
           flat
           dense

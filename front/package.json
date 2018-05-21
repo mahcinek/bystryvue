@@ -11,7 +11,10 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "autoprefixer": "^8.4.1",
+    "axios": "^0.18.0",
+    "vue-axios": "^2.1.1",
+    "vue2-google-maps": "^0.9.5"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
