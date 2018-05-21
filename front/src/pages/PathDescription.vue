@@ -27,6 +27,10 @@
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = this.pageTitle;
+      console.log("Opis sciezki");
+    },
+    methods: {
+
     }
   }
 </script>

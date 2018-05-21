@@ -9,7 +9,7 @@ export default {
   props: {
     name: String,
     img: String,
-  },
+  }
 };
 </script>
 
@@ -21,7 +21,6 @@ export default {
     border: black solid 1px;
     vertical-align: middle;
     text-align: center;
-
   }
   .header{
     font-size: 22px;
