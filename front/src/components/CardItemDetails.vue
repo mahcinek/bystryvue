@@ -33,7 +33,7 @@
               color="#00897B"
               :icon="carousel.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"
               @click="togFS(carousel.slide)"
-            />
+            ></q-btn>
           </q-carousel-control>
         </q-carousel>
 
@@ -103,18 +103,18 @@
         },
         oneClick: function(event){
           console.log("clicked")
-          this.clicks++ 
+          this.clicks++
           if(this.clicks === 1) {
             var self = this
             this.timer = setTimeout(function() {
               self.clicks = 0
             }, this.delay);
           } else{
-            clearTimeout(this.timer);  
+            clearTimeout(this.timer);
             this.opened = false
             this.clicks = 0;
-          }        	
-        } 
+          }
+        }
       }
     }
 </script>
