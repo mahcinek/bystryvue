@@ -67,7 +67,7 @@ module.exports = function (ctx) {
         'QCardActions',
         'QCarousel',
         'QCarouselSlide',
-        'QCarouselControl'
+        'QCarouselControl',
         'QModal',
         'AppFullscreen'
       ],
