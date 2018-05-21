@@ -13,6 +13,7 @@
   "dependencies": {
     "autoprefixer": "^8.4.1",
     "axios": "^0.18.0",
+    "vue-axios": "^2.1.1",
     "vue2-google-maps": "^0.9.5"
   },
   "devDependencies": {
