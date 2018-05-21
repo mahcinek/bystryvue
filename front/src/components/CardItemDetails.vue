@@ -105,15 +105,33 @@
           console.log("clicked")
           this.clicks++
           if(this.clicks === 1) {
-            var self = this
+            var self = this;
             this.timer = setTimeout(function() {
               self.clicks = 0
             }, this.delay);
           } else{
             clearTimeout(this.timer);
-            this.opened = false
+            this.opened = false;
             this.clicks = 0;
           }
+        },
+
+        buildURL(section){
+          return baseURL + section;
+        },
+        getDescription(section){
+          let url = buildURL(section);
+          axios.get(url)
+            .then( (response) => {
+              this.decsription = response.data.opis;
+            });
+        },
+        getImages(section){
+          let url = buildURL(section);
+          axios.get(url)
+            .then( (response) => {
+              this.data().images = response.data.results;
+            });
         }
       }
     }

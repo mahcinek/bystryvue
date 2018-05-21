@@ -21,7 +21,7 @@
         upperImagePath: String,
         lowerImagePath: String,
         description: String
-      },
+      }
     }
 </script>
 
