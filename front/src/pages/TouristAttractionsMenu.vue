@@ -6,6 +6,7 @@
 
 <script>
   import MenuCardsList from '../components/MenuCardsList';
+  import axios from 'axios';
 
   export default {
     name: "tourist-attractions-menu",
@@ -22,9 +23,21 @@
     components: {
       MenuCardsList,
     },
+    methods:{
+      getData(){
+        console.log("getData");
+        let url = 'http://bystrzyca.herokuapp.com/api/v1/obiekts';
+        const resultArray = [];
+        axios.get(url)
+          .then( response => {
+            this.cards = response.data;
+            return response;});
+      }
+    },
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Atrakcje turystyczne';
+    this.getData();
   }
     }
 </script>

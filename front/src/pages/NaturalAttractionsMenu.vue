@@ -25,40 +25,34 @@
       },
 
     methods:{
-      getDescription(section){
-        const resultArray = [];
-        let url = 'http://api/api/v1/' + section;
-        axios.get(url)
-          .then( response => {
-            return response;})
-          .then(data => {
-            for(let key in data){
-              resultArray.push(data[key]);
-            }
-            this.cards = resultArray;
-          });
-      },
-      getImages(section){
-        console.log("getImages");
+      getData(){
+        console.log("getData");
         let url = 'http://bystrzyca.herokuapp.com/api/v1/obiekts';
         const resultArray = [];
         axios.get(url)
           .then( response => {
-            return response;})
-          .then( data => {
-            for(let key in data){
-              console.log("for");
-              resultArray.push(data[key]);
-            }
-            this.cards = resultArray;
-          });
-        console.log("getImges finished");
+            //console.log("response");
+            //console.log(response.data);
+            this.cards = response.data;
+            console.log(this.cards == null);
+            return response;});
+          // .then( data => {
+          //   console.log("Tu jest data");
+          //   console.log(data);
+          //   for(let key in data){
+          //     console.log("for");
+          //     resultArray.push(data[key]);
+          //   }
+          //   this.cards = resultArray;
+          // });
+        // console.log("getImges finished");
+        // console.log(this.cards.pop().title);
       }
     },
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = 'Przyroda';
-      this.getImages("zdjecies");
+      this.getData();
     }
   }
 </script>
