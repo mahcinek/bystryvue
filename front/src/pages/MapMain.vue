@@ -27,11 +27,16 @@ export default {
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Mapa';
+    this.$store.state.example.isMapPage = true;
+    this.$store.state.example.isNavigation = false;
   },
   methods:{
     consoleLog: function(){
       console.log("Klikniete");
     }
+  },
+  beforeDestroy(){
+    this.$store.state.example.isMapPage=  false;
   }
 
 

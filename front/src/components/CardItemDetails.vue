@@ -33,7 +33,7 @@
               color="#00897B"
               :icon="carousel.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"
               @click="togFS(carousel.slide)"
-            />
+            ></q-btn>
           </q-carousel-control>
         </q-carousel>
 
@@ -74,7 +74,9 @@
                 count:0,
                 clicks:0,
                 delay: 500,
-                timer: null
+                timer: null,
+                lat:51.000708,
+                lng:16.753288
         }
       },
       props: {
@@ -84,7 +86,9 @@
       },
       methods: {
         goToArrival(){
-          this.$router.replace('/map');
+          this.$store.state.example.navigationLongLat = [this.lat, this.lng]
+          this.$store.state.example.navigationType = 'point'
+          this.$router.replace('/navigate');
         },
         consoleLog: function(){
           console.log("Klikniete");
@@ -133,7 +137,6 @@
               this.data().images = response.data.results;
             });
         }
-
       }
     }
 </script>
