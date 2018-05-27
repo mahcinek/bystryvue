@@ -33,7 +33,7 @@
               color="#00897B"
               :icon="carousel.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"
               @click="togFS(carousel.slide)"
-            />
+            ></q-btn>
           </q-carousel-control>
         </q-carousel>
 
@@ -137,7 +137,6 @@
               this.data().images = response.data.results;
             });
         }
-
       }
     }
 </script>

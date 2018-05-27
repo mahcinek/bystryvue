@@ -69,10 +69,16 @@ module.exports = function (ctx) {
         'QCarouselSlide',
         'QCarouselControl',
         'QModal',
-        'AppFullscreen'
+        'AppFullscreen',
+        'QPopover',
+        'QItemSeparator',
+        'QItemSide',
+        'QItemTile',
+        'QToggle'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'CloseOverlay'
       ],
       // Quasar plugins
       plugins: [
