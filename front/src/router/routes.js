@@ -8,6 +8,7 @@ export default [
     children: [
       { path: '', component: () => import('pages/index') },
       { path: '/map', component: () => import('pages/MapMain') },
+      { path: '/navigate', component: () => import('pages/Naviagation') },
       { path: '/arrival', component: () => import('pages/ArrivalDescription') },
       { path: '/officialPaths', component: () => import('pages/OfficialPaths') },
       { path: '/interestingPlacesMenu', component: () => import('pages/InterestingPlacesMenu') },
