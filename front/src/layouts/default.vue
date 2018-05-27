@@ -50,6 +50,26 @@
             </q-list>
           </q-popover>
         </q-btn>
+        <q-btn
+          flat
+          round
+          dense
+          icon="more_vert"
+          v-if=isNaviagation
+          @change="setMode"
+          :on-click = "showPopover = true">
+            <q-popover class="q-itemColor"
+            v-if = "showPopover">
+            <q-list style="min-width: 150px" >
+              <q-item class="q-itemColor">
+                <q-item-side left>
+                  <q-toggle v-model="walkingOrDriving" ></q-toggle>
+                </q-item-side>
+                <q-item-main label="Chodzenie" />
+              </q-item>
+            </q-list>
+          </q-popover>
+        </q-btn>
 
 
 
@@ -73,6 +93,7 @@ export default {
       monuments_markers: true,
       nature_markers: true,
       tourist_markers: true,
+      walkingOrDriving:false
     }
   },
   computed: {
@@ -84,12 +105,21 @@ export default {
     },
     isMapPage: function(){
       return this.$store.state.example.isMapPage
+    },
+    isNaviagation: function(){
+      return this.$store.state.example.isNaviagation
     }
   },
   methods: {
     openURL,
     goBack() {
       this.$router.go(-1)
+    },
+    setMode (){
+      if (this.walkingOrDriving === true)
+      this.$store.state.example.walkingOrDriving = 'WALKING'
+      else
+      this.$store.state.example.walkingOrDriving = 'DRIVING'
     }
   },
 
