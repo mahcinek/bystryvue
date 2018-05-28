@@ -13,10 +13,10 @@
       data() {
         return {
           cards: [
-            { nazwa: 'Łąki', zdjecie_link: '../assets/laki.jpg', destination: '/details/1' },
-            { nazwa: 'Zbiornik Mietkowski', zdjecie_link: '../assets/zbiornik-mietkowski.jpg', destination: '/details/1' },
-            { nazwa: 'Grądy i Olsy', zdjecie_link: '../assets/grady-olsy.jpg', destination: '/details/1' },
-            { nazwa: 'Starorzecza', zdjecie_link: '../assets/starorzecza.jpg', destination: '/details/1' },
+            { nazwa: 'Łąki', link: '../assets/laki.jpg', destination: '/details/1' },
+            { nazwa: 'Zbiornik Mietkowski', link: '../assets/zbiornik-mietkowski.jpg', destination: '/details/1' },
+            { nazwa: 'Grądy i Olsy', link: '../assets/grady-olsy.jpg', destination: '/details/1' },
+            { nazwa: 'Starorzecza', link: '../assets/starorzecza.jpg', destination: '/details/1' },
           ],
         };
       },
@@ -47,12 +47,31 @@
           // });
         // console.log("getImges finished");
         // console.log(this.cards.pop().title);
+      },
+      getPics(){
+        console.log("getPics");
+        let url = 'http://bystrzyca.herokuapp.com/api/v1/zdjecies';
+        const resultArray = [];
+        axios.get(url)
+          .then( response => {
+            var r;
+            for(r = 0; r < response.data.length; r++){
+              var i;
+              for(i = 0; i < this.cards.length; i++){
+                if(this.cards[i].id == response.data[r].obiekt_id){
+                  this.cards[i].link = response.data[r].zdjecie_link;
+                }
+              }
+            }
+            return response;});
       }
     },
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = 'Przyroda';
+      // TODO
       //this.getData();
+      //this.getPics();
     }
   }
 </script>

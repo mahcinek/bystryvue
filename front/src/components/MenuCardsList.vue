@@ -3,8 +3,8 @@
   <MenuCardItem
                   v-for="card in cards"
                   :title="card.nazwa"
-                  :imagePath="card.zdjecie_link"
-                  :key="card.nazwa"
+                  :imagePath="card.link"
+                  :key="card.id"
                   :destination = "card.destination">
   </MenuCardItem>
 </q-page>

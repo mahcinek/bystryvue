@@ -13,10 +13,10 @@
     data() {
       return {
         cards: [
-          { nazwa: 'Zajazd Banderoza', zdjecie_link: '../assets/zajazd-banderoza.jpg', destination: '/details/1' },
-          { nazwa: 'Straszny Dwór', zdjecie_link: '../assets/straszny-dwor.jpg', destination: '/details/1' },
-          { nazwa: 'Karczma Rzym', zdjecie_link: '../assets/karczma-rzym.jpg', destination: '/details/1' },
-          { nazwa: 'Pałac w Krobielowicach', zdjecie_link: '../assets/palac-krobielowice-at.jpg', destination: '/details/1' },
+          { nazwa: 'Zajazd Banderoza', link: '../assets/zajazd-banderoza.jpg', destination: '/details/1' },
+          { nazwa: 'Straszny Dwór', link: '../assets/straszny-dwor.jpg', destination: '/details/1' },
+          { nazwa: 'Karczma Rzym', link: '../assets/karczma-rzym.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Krobielowicach', link: '../assets/palac-krobielowice-at.jpg', destination: '/details/1' },
         ],
       };
     },
@@ -32,13 +32,31 @@
           .then( response => {
             this.cards = response.data;
             return response;});
+      },
+      getPics(){
+        console.log("getPics");
+        let url = 'http://bystrzyca.herokuapp.com/api/v1/zdjecies';
+        const resultArray = [];
+        axios.get(url)
+          .then( response => {
+            var r;
+            for(r = 0; r < response.data.length; r++){
+              var i;
+              for(i = 0; i < this.cards.length; i++){
+                if(this.cards[i].id == response.data[r].obiekt_id){
+                  this.cards[i].link = response.data[r].zdjecie_link;
+                }
+              }
+            }
+            return response;});
       }
     },
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Atrakcje turystyczne';
-    //console.log(cards);
+    // TODO
     //this.getData();
+    //this.getPics();
   }
     }
 </script>

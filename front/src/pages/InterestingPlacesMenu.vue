@@ -12,9 +12,9 @@
     data() {
       return {
         cards: [
-          { nazwa: 'Zabytki', zdjecie_link: '../assets/zabytki.jpg', destination: 'monumentsMenu' },
-          { nazwa: 'Przyroda', zdjecie_link: '../assets/przyroda.jpg', destination: 'naturalAttractionsMenu' },
-          { nazwa: 'Atrakcje turystyczne', zdjecie_link: '../assets/zajazd-banderoza.jpg', destination: 'touristAttractionsMenu' },
+          { nazwa: 'Zabytki', link: '../assets/zabytki.jpg', destination: 'monumentsMenu' },
+          { nazwa: 'Przyroda', link: '../assets/przyroda.jpg', destination: 'naturalAttractionsMenu' },
+          { nazwa: 'Atrakcje turystyczne', link: '../assets/zajazd-banderoza.jpg', destination: 'touristAttractionsMenu' },
         ],
       };
     },
