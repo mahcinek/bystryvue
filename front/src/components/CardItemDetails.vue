@@ -75,8 +75,8 @@
                 clicks:0,
                 delay: 500,
                 timer: null,
-                lat:51.000708,
-                lng:16.753288
+                lat:51.001662,
+                lng:16.780929
         }
       },
       props: {

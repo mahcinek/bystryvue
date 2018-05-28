@@ -18,7 +18,7 @@
     <GmapMarker
       :position="{lat:navigationPoint[0], lng:navigationPoint[1]}"
       :clickable="true"
-      @click="consoleLog"
+      @click="consoleLog2"
     />
     <GmapMarker
       :position="{lat:lat, lng:lng}"
@@ -67,12 +67,24 @@ export default {
     consoleLog: function(){
       console.log("Klikniete");
     },
+    consoleLog2: function(){
+      console.log("aa")
+      var addressLongLat=this.navigationPoint[0].toString()+','+this.navigationPoint[1].toString()
+      // window.open("google.navigation:q="+addressLongLat);
+      // window.open("google.navigation:q=23.3728831,85.3372199&mode=d" , '_system');
+      window.open("https://www.google.com/maps/dir/?api=1&destination="+addressLongLat);
+    },
     geolocation : function() {
       navigator.geolocation.getCurrentPosition((position) => {
           this.lat = position.coords.latitude
           this.lng = position.coords.longitude
           this.getRoute()
       });
+    },
+    openMaps: function (){
+      console.log("aa")
+      addressLongLat=navigationPoint[0].toString()+','+navigationPoint[1].toString()
+      window.open("geo:"+addressLongLat);
     },
     getRoute: function () {
       console.log([this.lat, this.lng])
