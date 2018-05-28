@@ -12,9 +12,9 @@
       data() {
         return {
           paths: [
-            {title: 'Dydaktyczna ścieżka rowerowa', imagePath: '../assets/sciezka-dydaktyczna.jpg', destination: '/pathDescription/1'},
-            {title: 'Ścieżka Jarnołtów-Ratyń', imagePath: '../assets/jarnoltow-ratyn.jpg', destination: '/pathDescription/2'},
-            {title: 'Cicha Dolina', imagePath: '../assets/cicha-dolina.jpg', destination: '/pathDescription/3'},
+            {nazwa: 'Dydaktyczna ścieżka rowerowa', zdjecie_link: '../assets/sciezka-dydaktyczna.jpg', destination: '/pathDescription/1'},
+            {nazwa: 'Ścieżka Jarnołtów-Ratyń', zdjecie_link: '../assets/jarnoltow-ratyn.jpg', destination: '/pathDescription/2'},
+            {nazwa: 'Cicha Dolina', zdjecie_link: '../assets/cicha-dolina.jpg', destination: '/pathDescription/3'},
           ],
         };
       },

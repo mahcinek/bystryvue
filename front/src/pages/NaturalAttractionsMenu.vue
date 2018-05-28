@@ -13,10 +13,10 @@
       data() {
         return {
           cards: [
-            { title: 'Łąki', imagePath: '../assets/laki.jpg', destination: '/details/1' },
-            { title: 'Zbiornik Mietkowski', imagePath: '../assets/zbiornik-mietkowski.jpg', destination: '/details/1' },
-            { title: 'Grądy i Olsy', imagePath: '../assets/grady-olsy.jpg', destination: '/details/1' },
-            { title: 'Starorzecza', imagePath: '../assets/starorzecza.jpg', destination: '/details/1' },
+            { nazwa: 'Łąki', zdjecie_link: '../assets/laki.jpg', destination: '/details/1' },
+            { nazwa: 'Zbiornik Mietkowski', zdjecie_link: '../assets/zbiornik-mietkowski.jpg', destination: '/details/1' },
+            { nazwa: 'Grądy i Olsy', zdjecie_link: '../assets/grady-olsy.jpg', destination: '/details/1' },
+            { nazwa: 'Starorzecza', zdjecie_link: '../assets/starorzecza.jpg', destination: '/details/1' },
           ],
         };
       },
@@ -34,7 +34,7 @@
             //console.log("response");
             //console.log(response.data);
             this.cards = response.data;
-            console.log(this.cards == null);
+            //console.log(this.cards == null);
             return response;});
           // .then( data => {
           //   console.log("Tu jest data");
@@ -52,7 +52,7 @@
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = 'Przyroda';
-      this.getData();
+      //this.getData();
     }
   }
 </script>

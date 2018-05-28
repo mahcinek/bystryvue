@@ -13,10 +13,10 @@
     data() {
       return {
         cards: [
-          { title: 'Zajazd Banderoza', imagePath: '../assets/zajazd-banderoza.jpg', destination: '/details/1' },
-          { title: 'Straszny Dwór', imagePath: '../assets/straszny-dwor.jpg', destination: '/details/1' },
-          { title: 'Karczma Rzym', imagePath: '../assets/karczma-rzym.jpg', destination: '/details/1' },
-          { title: 'Pałac w Krobielowicach', imagePath: '../assets/palac-krobielowice-at.jpg', destination: '/details/1' },
+          { nazwa: 'Zajazd Banderoza', zdjecie_link: '../assets/zajazd-banderoza.jpg', destination: '/details/1' },
+          { nazwa: 'Straszny Dwór', zdjecie_link: '../assets/straszny-dwor.jpg', destination: '/details/1' },
+          { nazwa: 'Karczma Rzym', zdjecie_link: '../assets/karczma-rzym.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Krobielowicach', zdjecie_link: '../assets/palac-krobielowice-at.jpg', destination: '/details/1' },
         ],
       };
     },
@@ -37,7 +37,8 @@
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Atrakcje turystyczne';
-    this.getData();
+    //console.log(cards);
+    //this.getData();
   }
     }
 </script>

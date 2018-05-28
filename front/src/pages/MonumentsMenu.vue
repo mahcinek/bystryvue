@@ -13,10 +13,10 @@
     data() {
       return {
         cards: [
-          { title: 'Pałac w Sadowicach', imagePath: '../assets/palac-sadowice.jpg', destination: '/details/1' },
-          { title: 'Pałac w Samotworze', imagePath: '../assets/palac-samotwor.jpg', destination: '/details/1' },
-          { title: 'Pałac w Krobielowicach', imagePath: '../assets/palac-krobielowice.jpg', destination: '/details/1' },
-          { title: 'Pałac w Sośnicy', imagePath: '../assets/palac-sosnica.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Sadowicach', zdjecie_link: '../assets/palac-sadowice.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Samotworze', zdjecie_link: '../assets/palac-samotwor.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Krobielowicach', zdjecie_link: '../assets/palac-krobielowice.jpg', destination: '/details/1' },
+          { nazwa: 'Pałac w Sośnicy', zdjecie_link: '../assets/palac-sosnica.jpg', destination: '/details/1' },
         ],
       };
     },
@@ -37,7 +37,7 @@
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = 'Zabytki';
-      this.getData();
+      //this.getData();
     }
     }
 </script>
