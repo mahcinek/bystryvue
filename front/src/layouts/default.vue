@@ -24,26 +24,24 @@
           round
           dense
           icon="more_vert"
-          v-if=isMapPage
-          :on-click = "showPopover = true">
-            <q-popover class="q-itemColor"
-            v-if = "showPopover">
+          v-if=isMapPage>
+            <q-popover class="q-itemColor">
             <q-list style="min-width: 150px" >
               <q-item class="q-itemColor">
                 <q-item-side left>
-                  <q-toggle v-model="monuments_markers" ></q-toggle>
+                  <q-toggle v-model="monumentsMarkersFlag" ></q-toggle>
                 </q-item-side>
                 <q-item-main label="Zabytki" />
               </q-item>
               <q-item class="q-itemColor">
                 <q-item-side left>
-                  <q-toggle v-model="nature_markers" ></q-toggle>
+                  <q-toggle v-model="natureMarkersFlag" ></q-toggle>
                 </q-item-side>
                 <q-item-main label="Przyroda" />
               </q-item>
               <q-item class="q-itemColor">
                 <q-item-side left>
-                  <q-toggle v-model="tourist_markers" ></q-toggle>
+                  <q-toggle v-model="touristMarkersFlag" ></q-toggle>
                 </q-item-side>
                 <q-item-main label="Dla turysty" />
               </q-item>
@@ -56,10 +54,8 @@
           dense
           icon="more_vert"
           v-if=isNaviagation
-          @change="setMode"
-          :on-click = "showPopover = true">
-            <q-popover class="q-itemColor"
-            v-if = "showPopover">
+          @change="setMode">
+            <q-popover class="q-itemColor">
             <q-list style="min-width: 150px" >
               <q-item class="q-itemColor">
                 <q-item-side left>
@@ -89,10 +85,9 @@ export default {
   name: 'LayoutDefault',
   data () {
     return {
-      showPopover: false,
-      monuments_markers: true,
-      nature_markers: true,
-      tourist_markers: true,
+      monumentsMarkersFlag: true,
+      natureMarkersFlag: true,
+      touristMarkersFlag: true,
       walkingOrDriving:false
     }
   },
@@ -108,6 +103,17 @@ export default {
     },
     isNaviagation: function(){
       return this.$store.state.example.isNaviagation
+    }
+  },
+  watch: {
+    monumentsMarkersFlag: function (value) {
+      this.$store.state.example.monumentsMarkersFlag = value;
+    },
+    natureMarkersFlag: function (value) {
+      this.$store.state.example.natureMarkersFlag = value;
+    },
+    touristMarkersFlag: function (value) {
+      this.$store.state.example.touristMarkersFlag = value;
     }
   },
   methods: {
