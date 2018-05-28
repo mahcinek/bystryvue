@@ -9,9 +9,9 @@ export default {
   touristMarkersFlag: true,
 
 
-  navigationLongLat: [0.0, 0.0],
+  navigationLongLat: [51.094768, 17.042073],
   navigationArr: [[0.0, 0.0], [0.1, 0.1]],
   navigationType: '',
-  walking_or_driving: 'DRIVING',
+  walking_or_driving: 'WALKING',
 
 };

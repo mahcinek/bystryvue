@@ -28,14 +28,14 @@ module.exports = function (ctx) {
       // analyze: true,
       // extractCSS: false,
       // useNotifier: false,
-      extendWebpack (cfg) {
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules|quasar)/
-        })
-      }
+      // extendWebpack (cfg) {
+      //   // cfg.module.rules.push({
+      //   //   enforce: 'pre',
+      //   //   test: /\.(js|vue)$/,
+      //   //   loader: 'eslint-loader',
+      //   //   exclude: /(node_modules|quasar)/
+      //   // })
+      // }
     },
     devServer: {
       // https: true,
