@@ -129,9 +129,13 @@ export default {
     axios.get('http://bystrzyca.herokuapp.com/api/v1/obiekts')
       .then(response => {
         this.markers = response.data;
+        this.markers.forEach(function (obj) {
+          obj.dlugosc_geograficzna = obj.dlugosc_geograficzna/1000;
+          obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
+        })
       }).then(data => {
         this.monumentsMarkers = this.markers.filter(obj =>{
-          return obj.typ === 1
+          return obj.typ === 1 || obj.typ === 4
         });
         this.natureMarkers = this.markers.filter(obj =>{
           return obj.typ === 2
