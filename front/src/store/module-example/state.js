@@ -16,6 +16,7 @@ export default {
   navigationType: '',
   walking_or_driving: 'WALKING',
 
+  cardDetailsId: '',
   objects: [],
   currentObject:[]
 

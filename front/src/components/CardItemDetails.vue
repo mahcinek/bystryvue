@@ -21,7 +21,7 @@
           color="white"
           style="width: 100%; height: 45%;"
           >
-          <q-carousel-slide v-for="im in images" :img-src=im :key="im" />
+          <q-carousel-slide :img-src=images ></q-carousel-slide>
           <q-carousel-control
             slot="control-button"
             slot-scope="carousel"
@@ -41,8 +41,7 @@
           <!--Launch-->
         <!--</q-btn>-->
 
-        <p>
-          {{id}}{{description}}
+        <p>{{description}}
         </p>
         <q-btn
           @click="goToArrival"
@@ -61,26 +60,38 @@
         return{ opened: false,
                 index1: 0,
                 car: null,
-                images: [
-                  'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
-                  'https://i.nocimg.pl/img/zdj_hd/d8/1369/124-wroc-aw-karczma-rzym-wroc-aw.jpg',
-                  'https://s-ec.bstatic.com/images/hotel/max1024x768/143/14305843.jpg'
-                ],
+               // images: [
+               //    'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
+               //    'https://i.nocimg.pl/img/zdj_hd/d8/1369/124-wroc-aw-karczma-rzym-wroc-aw.jpg',
+               //    'https://s-ec.bstatic.com/images/hotel/max1024x768/143/14305843.jpg'
+               //  ],
                 modal_source: '',
                 interval: false,
                 count:0,
                 clicks:0,
                 delay: 500,
                 timer: null,
-                lat:51.001662,
-                lng:16.780929,
+                // lat:51.001662,
+                // lng:16.780929,
                 id: this.$route.params.id
         }
       },
       props: {
-        pageTitle: String, //tytuł na pasku nawigacji
-        // imagePath: String,
-        description: String
+        obj: {}
+      },
+      computed:{
+        description: function(){
+          return this.obj.opis;
+        },
+        images: function(){
+          return this.obj.link;
+        },
+        lat: function () {
+          return this.obj.dlugosc_geograficzna;
+        },
+        lng: function () {
+          return this.obj.szerokosc_geograficzna;
+        }
       },
       methods: {
         goToArrival(){
@@ -134,7 +145,10 @@
             .then( (response) => {
               this.data().images = response.data.results;
             });
-        }
+        },
+      },
+      created(){
+        this.$store.state.example.pageTitle = this.obj.nazwa;
       }
     }
 </script>
