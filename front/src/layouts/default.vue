@@ -128,7 +128,12 @@ export default {
       this.$store.state.example.walkingOrDriving = 'DRIVING'
     }
   },
-
+  beforeMount(){
+    if(this.$store.state.example.objects.length === 0){
+      var vm = this;
+      this.$store.dispatch('example/fetchObjects',vm)
+    }
+  },
 
 };
 </script>

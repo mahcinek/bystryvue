@@ -18,6 +18,7 @@
 
 export default {
   props: {
+    id: Number,
     title: String,
     imagePath: String,
     destination: String,

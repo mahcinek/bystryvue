@@ -60,27 +60,6 @@ export default {
           dlugosc_geograficzna:51.000708,
           szerokosc_geograficzna:16.773288}
       ],
-      monumentsMarkers: [
-        { id: 2,
-          typ: 0,
-          nazwa: '',
-          dlugosc_geograficzna:51.000708,
-          szerokosc_geograficzna:16.773288},
-      ],
-      natureMarkers: [
-        { id: 3,
-          typ: 0,
-          nazwa: '',
-          dlugosc_geograficzna:51.011308,
-          szerokosc_geograficzna:16.783288}
-        ],
-      touristMarkers: [
-        { id: 4,
-          typ: 0,
-          nazwa: '',
-          dlugosc_geograficzna:51.020008,
-          szerokosc_geograficzna:16.793288}
-        ],
       infoWindowContent: '',
       infoWindowPosition: {
         lat:51.000708,
@@ -103,6 +82,15 @@ export default {
     },
     touristMarkersFlag: function () {
       return this.$store.state.example.touristMarkersFlag;
+    },
+    monumentsMarkers: function () {
+      return this.$store.state.example.monumentsMarkers;
+    },
+    natureMarkers: function () {
+      return this.$store.state.example.natureMarkers;
+    },
+    touristMarkers: function () {
+      return this.$store.state.example.touristMarkers;
     }
   },
   methods:{
@@ -126,28 +114,29 @@ export default {
     this.$store.state.example.pageTitle = 'Mapa';
     this.$store.state.example.isMapPage = true;
     this.$store.state.example.isNavigation = false;
-    axios.get('http://bystrzyca.herokuapp.com/api/v1/obiekts')
-      .then(response => {
-        this.markers = response.data;
-        this.markers.forEach(function (obj) {
-          obj.dlugosc_geograficzna = obj.dlugosc_geograficzna/1000;
-          obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
-        })
-      }).then(data => {
-        this.monumentsMarkers = this.markers.filter(obj =>{
-          return obj.typ === 1 || obj.typ === 4
-        });
-        this.natureMarkers = this.markers.filter(obj =>{
-          return obj.typ === 2
-        });
-        this.touristMarkers = this.markers.filter(obj =>{
-          return obj.typ === 3
-        });
-      });
+    // axios.get('http://bystrzyca.herokuapp.com/api/v1/obiekts')
+    //   .then(response => {
+    //     this.markers = response.data;
+    //     this.markers.forEach(function (obj) {
+    //       obj.dlugosc_geograficzna = obj.dlugosc_geograficzna/1000;
+    //       obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
+    //     })
+    //   }).then(data => {
+    //     this.monumentsMarkers = this.markers.filter(obj =>{
+    //       return obj.typ === 1 || obj.typ === 4
+    //     });
+    //     this.natureMarkers = this.markers.filter(obj =>{
+    //       return obj.typ === 2
+    //     });
+    //     this.touristMarkers = this.markers.filter(obj =>{
+    //       return obj.typ === 3
+    //     });
+    //   });
   },
   beforeDestroy(){
     this.$store.state.example.isMapPage = false;
-  }
+  },
+
 };
 
 </script>

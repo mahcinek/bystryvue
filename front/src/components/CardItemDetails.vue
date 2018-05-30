@@ -21,7 +21,7 @@
           color="white"
           style="width: 100%; height: 45%;"
           >
-          <q-carousel-slide v-for="im in images" :img-src=im />
+          <q-carousel-slide v-for="im in images" :img-src=im :key="im" />
           <q-carousel-control
             slot="control-button"
             slot-scope="carousel"
@@ -42,7 +42,7 @@
         <!--</q-btn>-->
 
         <p>
-          {{description}}
+          {{id}}{{description}}
         </p>
         <q-btn
           @click="goToArrival"
@@ -63,9 +63,6 @@
                 car: null,
                 images: [
                   'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
-                  'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
-                  'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
-                  'http://bi.gazeta.pl/im/83/87/11/z18380931Q.jpg',
                   'https://i.nocimg.pl/img/zdj_hd/d8/1369/124-wroc-aw-karczma-rzym-wroc-aw.jpg',
                   'https://s-ec.bstatic.com/images/hotel/max1024x768/143/14305843.jpg'
                 ],
@@ -76,12 +73,13 @@
                 delay: 500,
                 timer: null,
                 lat:51.001662,
-                lng:16.780929
+                lng:16.780929,
+                id: this.$route.params.id
         }
       },
       props: {
         pageTitle: String, //tytuł na pasku nawigacji
-        //imagePath: String,
+        // imagePath: String,
         description: String
       },
       methods: {

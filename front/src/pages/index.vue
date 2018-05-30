@@ -27,7 +27,8 @@ export default {
   created(){
     this.$store.state.example.showBtn =  false;
     this.$store.state.example.pageTitle = 'Dolina Bystrzycy';
-  }
+  },
+
 };
 
 </script>

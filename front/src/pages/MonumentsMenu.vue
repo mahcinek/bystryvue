@@ -13,10 +13,7 @@
     data() {
       return {
         cards: [
-          { nazwa: 'Pałac w Sadowicach', link: '../assets/palac-sadowice.jpg', destination: '/details/1' },
-          { nazwa: 'Pałac w Samotworze', link: '../assets/palac-samotwor.jpg', destination: '/details/1' },
-          { nazwa: 'Pałac w Krobielowicach', link: '../assets/palac-krobielowice.jpg', destination: '/details/1' },
-          { nazwa: 'Pałac w Sośnicy', link: '../assets/palac-sosnica.jpg', destination: '/details/1' },
+          {id:0, nazwa: 'Pałac w Sośnicy', link: '../assets/palac-sosnica.jpg', destination: '/details/1' },
         ],
       };
     },
@@ -31,6 +28,10 @@
         axios.get(url)
           .then( response => {
             this.cards = response.data;
+            var vm = this;
+            this.cards.forEach(function (obj) {
+              vm.$set(obj,'destination','details/'+obj.id);
+            });
             return response;});
       },
       getPics(){
@@ -50,16 +51,12 @@
             }
             return response;});
       },
-       printASDF(){
-         console.log(this.cards[0]);
-       }
     },
     created(){
       this.$store.state.example.showBtn = true;
       this.$store.state.example.pageTitle = 'Zabytki';
       this.getData();
       this.getPics();
-      console.log(this.cards[0].link);
     },
     }
 </script>

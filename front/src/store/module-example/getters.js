@@ -1,6 +1,7 @@
 /*
-export const getCurrentLocation = (state) => {
-  return state.currentLocation;
-}
+export const aa = (state) => {
+  return 1;
+};
+
 
 */

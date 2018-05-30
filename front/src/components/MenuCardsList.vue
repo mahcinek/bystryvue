@@ -5,7 +5,8 @@
                   :title="card.nazwa"
                   :imagePath="card.link"
                   :key="card.id"
-                  :destination = "card.destination">
+                  :destination = "card.destination"
+                  :id="card.id">
   </MenuCardItem>
 </q-page>
 </template>
