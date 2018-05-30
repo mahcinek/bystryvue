@@ -47,100 +47,71 @@
 </template>
 
 <script>
-  import axios from 'axios';
-
-export default {
-  name: 'mapMain',
-  data() {
-    return {
-      markers:[
-        { id: 1,
-          typ: 0,
-          nazwa: '',
-          dlugosc_geograficzna:51.000708,
-          szerokosc_geograficzna:16.773288}
-      ],
-      infoWindowContent: '',
-      infoWindowPosition: {
-        lat:51.000708,
-        lng:16.753288},
-      infoWindowOpen: false,
-      infoWindowOptions: {
-        pixelOffset: {
-          width: 0,
-          height: -30
+  export default {
+    name: 'mapMain',
+    data() {
+      return {
+        infoWindowContent: '',
+        infoWindowPosition: {
+          lat:51.000708,
+          lng:16.753288},
+        infoWindowOpen: false,
+        infoWindowOptions: {
+          pixelOffset: {
+            width: 0,
+            height: -30
+          }
         }
       }
-    }
-  },
-  computed:{
-    monumentsMarkersFlag: function () {
-      return this.$store.state.example.monumentsMarkersFlag;
     },
-    natureMarkersFlag: function () {
-      return this.$store.state.example.natureMarkersFlag;
-    },
-    touristMarkersFlag: function () {
-      return this.$store.state.example.touristMarkersFlag;
-    },
-    monumentsMarkers: function () {
-      return this.$store.state.example.monumentsMarkers;
-    },
-    natureMarkers: function () {
-      return this.$store.state.example.natureMarkers;
-    },
-    touristMarkers: function () {
-      return this.$store.state.example.touristMarkers;
-    }
-  },
-  methods:{
-    toggleInfoWindow: function(marker){
-      this.infoWindowContent = marker.nazwa;
-      if(this.infoWindowPosition.dlugosc_geograficzna
-        === marker.dlugosc_geograficzna
-        && this.infoWindowPosition.szerokosc_geograficzna
-        === marker.szerokosc_geograficzna){
-        this.infoWindowOpen = !this.infoWindowOpen;
+    computed:{
+      monumentsMarkersFlag: function () {
+        return this.$store.state.example.monumentsMarkersFlag;
+      },
+      natureMarkersFlag: function () {
+        return this.$store.state.example.natureMarkersFlag;
+      },
+      touristMarkersFlag: function () {
+        return this.$store.state.example.touristMarkersFlag;
+      },
+      monumentsMarkers: function () {
+        return this.$store.state.example.monumentsMarkers;
+      },
+      natureMarkers: function () {
+        return this.$store.state.example.natureMarkers;
+      },
+      touristMarkers: function () {
+        return this.$store.state.example.touristMarkers;
       }
-      else{
-        this.infoWindowOpen = true;
+    },
+    methods:{
+      toggleInfoWindow: function(marker){
+        this.infoWindowContent = marker.nazwa;
+        if(this.infoWindowPosition.lat
+          === marker.dlugosc_geograficzna
+          && this.infoWindowPosition.lng
+          === marker.szerokosc_geograficzna){
+          this.infoWindowOpen = !this.infoWindowOpen;
+        }
+        else{
+          this.infoWindowOpen = true;
+        }
+        this.infoWindowPosition.lat = marker.dlugosc_geograficzna;
+        this.infoWindowPosition.lng = marker.szerokosc_geograficzna;
       }
-      this.infoWindowPosition.lat = marker.dlugosc_geograficzna;
-      this.infoWindowPosition.lng = marker.szerokosc_geograficzna;
-    }
-  },
-  beforeCreate(){
-    this.$store.state.example.showBtn = true;
-    this.$store.state.example.pageTitle = 'Mapa';
-    this.$store.state.example.isMapPage = true;
-    this.$store.state.example.isNavigation = false;
-    // axios.get('http://bystrzyca.herokuapp.com/api/v1/obiekts')
-    //   .then(response => {
-    //     this.markers = response.data;
-    //     this.markers.forEach(function (obj) {
-    //       obj.dlugosc_geograficzna = obj.dlugosc_geograficzna/1000;
-    //       obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
-    //     })
-    //   }).then(data => {
-    //     this.monumentsMarkers = this.markers.filter(obj =>{
-    //       return obj.typ === 1 || obj.typ === 4
-    //     });
-    //     this.natureMarkers = this.markers.filter(obj =>{
-    //       return obj.typ === 2
-    //     });
-    //     this.touristMarkers = this.markers.filter(obj =>{
-    //       return obj.typ === 3
-    //     });
-    //   });
-  },
-  beforeDestroy(){
-    this.$store.state.example.isMapPage = false;
-  },
-
-};
+    },
+    beforeCreate(){
+      this.$store.state.example.showBtn = true;
+      this.$store.state.example.pageTitle = 'Mapa';
+      this.$store.state.example.isMapPage = true;
+      this.$store.state.example.isNavigation = false;
+    },
+    beforeDestroy(){
+      this.$store.state.example.isMapPage = false;
+    },
+  };
 
 </script>
 
 <style scoped>
-
 </style>

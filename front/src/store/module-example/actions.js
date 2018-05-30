@@ -42,6 +42,12 @@ export const setMarkers = (state, vm) => {
     });
 };
 
+export const getObjectById = (state, vm, ida) => {
+  vm.$store.state.example.currentObject = vm.$store.state.example.objects.filter(obj => {
+    return obj.id === ida;
+  })
+  console.log(ida);
+};
 
 
 

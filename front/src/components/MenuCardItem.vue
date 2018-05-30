@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     goTo(destination){
+      this.$store.state.example.cardDetailsId = this.id;
       this.$router.push(destination);
     }
   }
