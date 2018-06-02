@@ -71,7 +71,6 @@
 
       </q-toolbar>
     </q-layout-header>
-
     <q-page-container>
       <router-view />
     </q-page-container>

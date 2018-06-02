@@ -1,5 +1,6 @@
 <template>
   <q-page color="primary" style="position: relative; height: 92vh;">
+  <!--<q-page color="primary" style="position: relative; height: 100%;">-->
       <q-card color="primary" square style="width: 100%; height: 100%;">
         <!--<q-card-media style="width: 100%">-->
           <!--<img :src=imagePath>-->
@@ -8,7 +9,7 @@
           <!-- v-on:dblclick.native="doubleClick"
           v-on:dblclick="doubleClick"
           > -->
-          <img :src='modal_source' style="width=100%"
+          <img :src='modal_source' style="width: 100%;"
           v-on:dblclick.native="doubleClick"
           v-on:dblclick="doubleClick"
           @click='oneClick' >
