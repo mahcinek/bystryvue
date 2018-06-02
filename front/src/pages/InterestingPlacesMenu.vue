@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <MenuCardsList :cards="cards"></MenuCardsList>
+    <MenuCardListTriPic :cards="cards"></MenuCardListTriPic>
   </q-page>
 </template>
 
 <script>
-  import MenuCardsList from '../components/MenuCardsList';
+  import MenuCardListTriPic from '../components/MenuCardListTriPic';
 
   export default {
     name: "interesting-places-menu",
@@ -19,7 +19,7 @@
       };
     },
     components: {
-      MenuCardsList,
+      MenuCardListTriPic,
     },
   created(){
     this.$store.state.example.showBtn = true;

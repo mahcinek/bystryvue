@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <MenuCardsList :cards="paths"></MenuCardsList>
+    <MenuCardListTriPic :cards="paths"></MenuCardListTriPic>
   </q-page>
 </template>
 
 <script>
-  import MenuCardsList from '../components/MenuCardsList';
+  import MenuCardListTriPic from '../components/MenuCardListTriPic';
   import axios from 'axios';
 
     export default {
@@ -20,7 +20,7 @@
         };
       },
       components: {
-        MenuCardsList,
+        MenuCardListTriPic,
       },
       methods:{
         getData(){
