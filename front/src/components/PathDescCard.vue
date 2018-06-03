@@ -1,19 +1,14 @@
 <template>
-  <q-card color="primary" square style="width: 100%; height: 90vh;">
-    <q-card-media style="width: 100%;">
+  <q-page color="primary" style="position: relative; height: 92vh;">
+      <q-card color="primary" square style="width: 100%; height: 100%;">
+         <q-card-media style="width: 100%;">
       <img :src=upperImagePath>
     </q-card-media>
-      <p>
-        {{description}}
-      </p>
-    <div style="position:fixed; bottom: 0px;">
-    <q-card-media>
-      <img :src=lowerImagePath>
-    </q-card-media>
-    <q-btn label="Zaprowadź mnie tam" text-color="white" color="secondary" style="width: 100%;">
-    </q-btn>
-    </div>
-  </q-card>
+        <p>{{description}}
+        </p>
+       
+      </q-card>
+  </q-page>
 </template>
 
 <script>
@@ -21,8 +16,10 @@
       props: {
         name: String, //tytuł na pasku nawigacji
         upperImagePath: String,
-        lowerImagePath: String,
-        description: String
+        description: String,
+      },
+      methods:{
+        
       }
     }
 </script>
