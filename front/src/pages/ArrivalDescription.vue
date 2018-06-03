@@ -1,14 +1,14 @@
 <template>
   <q-page color="primary" style="position: relative; height: 92vh;">
   <q-card color="primary" square style="width: 100%; height: 100%;">
-    <q-card-media class="card-img">
-      <img :src=upperImagePath>
+    <q-card-media class="card-img" style="height: 35%">
+      <img :src=upperImagePath style="height: 100%">
     </q-card-media>
       <p>
         {{ description }}
       </p>
-    <q-card-media class="card-img" style="position: absolute; bottom: 0px;">
-      <img :src=lowerImagePath>
+    <q-card-media class="card-img" style="position: absolute; bottom: 0px; height: 40%">
+      <img :src=lowerImagePath style="height: 100%">
     </q-card-media>
   </q-card>
   </q-page>
@@ -37,6 +37,8 @@
 <style scoped>
   p {
     color: white;
+    overflow: auto;
+    height: 25%;
   }
   .card-img{
     width: 100%;
