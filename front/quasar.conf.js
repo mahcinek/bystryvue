@@ -69,6 +69,7 @@ module.exports = function (ctx) {
         'QCarouselSlide',
         'QCarouselControl',
         'QModal',
+        'QModalLayout',
         'AppFullscreen',
         'QPopover',
         'QItemSeparator',
