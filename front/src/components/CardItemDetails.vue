@@ -156,6 +156,9 @@
 
 <style scoped>
 p {
+  background-color: #00897B;
   color: white;
+  /*padding-bottom: 20px;*/
+  margin-bottom: 35px;
 }
 </style>
