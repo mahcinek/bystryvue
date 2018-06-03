@@ -47,7 +47,7 @@ export default {
   created(){
     this.$store.state.example.showBtn = true;
     this.$store.state.example.pageTitle = 'Nawigacja';
-    this.navigationArray = this.$store.state.example.navigationArr;
+    this.navigationArray = this.$store.state.example.navigationArray;
     this.navigationType = this.$store.state.example.navigationType
     this.navigationPoint = this.$store.state.example.navigationLongLat
     this.$store.state.example.isNaviagation = true;
@@ -87,6 +87,7 @@ export default {
       window.open("geo:"+addressLongLat);
     },
     getRoute: function () {
+      if (this.navigationType == 'Point'){
       console.log([this.lat, this.lng])
       console.log([this.navigationPoint[0], this.navigationPoint[1]])
       this.directionsService = new google.maps.DirectionsService()
@@ -107,6 +108,10 @@ export default {
           console.log('Directions request failed due to ' + status)
         }
       })
+      }
+      else {
+        console.log(this.navigationArr)
+      }
     }
   }
 
