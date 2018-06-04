@@ -13,9 +13,9 @@
       data() {
         return {
           paths: [
-            {nazwa: 'Cicha Dolina', link: '../assets/cicha-dolina.jpg', destination: '/pathDescription/1'},
-            {nazwa: 'Ścieżka Jarnołtów-Ratyń', link: '../assets/jarnoltow-ratyn.jpg', destination: '/pathDescription/2'},
-            {nazwa: 'Dydaktyczna ścieżka rowerowa', link: '../assets/sciezka-dydaktyczna.jpg', destination: '/pathDescription/3'},
+            {nazwa: 'Cicha Dolina', link: this.$store.state.example.touristPaths[0].link, destination: '/pathDescription/1'},
+            {nazwa: 'Ścieżka Jarnołtów-Ratyń', link:  this.$store.state.example.touristPaths[1].link, destination: '/pathDescription/2'},
+            {nazwa: 'Dydaktyczna ścieżka rowerowa', link:  this.$store.state.example.touristPaths[2].link, destination: '/pathDescription/3'},
           ],
         };
       },
@@ -25,7 +25,7 @@
       methods:{
         getData(){
           console.log("getData");
-          let url = 'http://bystrzyca.herokuapp.com/api/v1/trasas';
+          let url = 'https://bystrzyca.herokuapp.com/api/v1/trasas?format=json';
           const resultArray = [];
           axios.get(url)
             .then( response => {
