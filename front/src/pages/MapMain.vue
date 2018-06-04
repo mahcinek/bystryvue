@@ -23,7 +23,7 @@
                   :clickable="true"
                   :visible="monumentsMarkersFlag"
                   @click="toggleInfoWindow(marker)"
-                  :icon="'../assets/markers/palace-2.png'"
+                  :icon="'../statics/markers/palace-2.png'"
       />
       <GmapMarker v-for="marker in natureMarkers"
                   :key="marker.id"
@@ -31,7 +31,7 @@
                   :clickable="true"
                   :visible="natureMarkersFlag"
                   @click="toggleInfoWindow(marker)"
-                  :icon="'../assets/markers/tree.png'"
+                  :icon="'../statics/markers/tree.png'"
       />
       <GmapMarker v-for="marker in touristMarkers"
                   :key="marker.id"
@@ -39,7 +39,7 @@
                   :clickable="true"
                   :visible="touristMarkersFlag"
                   @click="toggleInfoWindow(marker)"
-                  :icon="'../assets/markers/restaurant.png'"
+                  :icon="'../statics/markers/restaurant.png'"
       />
 
   </GmapMap>
