@@ -24,6 +24,9 @@ export default {
   objects: [],
   currentObject:[],
   touristPaths: '',
-  currentTouristPath: []
+  currentTouristPath: [],
+  navigOne: [],
+  navigTwo: [],
+  navigThree: []
 
 };

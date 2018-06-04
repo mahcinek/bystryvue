@@ -59,10 +59,23 @@
     />
 
     <div v-if="navigationType=='path'">
-      <GmapMarker v-for="elem in navigationArray"
+      <GmapMarker v-for="elem in n1"
       :position="{lat:elem.lng, lng:elem.lat}"
       :clickable="true"
       @click="consoleLog2(elem.id)"
+      :icon="'https://image.ibb.co/kBvdv8/palace_2.png'"
+    />
+      <GmapMarker v-for="elem in n2"
+      :position="{lat:elem.lng, lng:elem.lat}"
+      :clickable="true"
+      @click="consoleLog2(elem.id)"
+      :icon="'https://image.ibb.co/hzY92o/tree.png'"
+    />
+      <GmapMarker v-for="elem in n3"
+      :position="{lat:elem.lng, lng:elem.lat}"
+      :clickable="true"
+      @click="consoleLog2(elem.id)"
+      :icon="'https://image.ibb.co/jtzhNo/restaurant.png'"
     />
     </div>
     <DirectionsRenderer />
@@ -85,7 +98,10 @@ export default {
           desc: "blah",
           title: "blah",
           selectedLat: 0.0,
-          selectedLng: 0.0
+          selectedLng: 0.0,
+          n1: [],
+          n2: [],
+          n3: []
         }
       },
   name: 'Navigation',
@@ -201,16 +217,55 @@ export default {
       }
     },
     findTheClosestOne(){
+      var NavOne = this.n1
+      var NavTwo = this.n2
+      var NavThree = this.n3
+
+      if (this.navigationArray[0].typ == 1)
+      {
+        NavOne.push(this.navigationArray[0])
+      }
+      else if(this.navigationArray[0].typ == 2){
+        NavTwo.push(this.navigationArray[0])
+      }
+      else {
+        NavThree.push(this.navigationArray[0])
+      }
       var closestOne = [this.navigationArray[0].lat, this.navigationArray[0].lng]
+
       var closestDistance = Math.sqrt(Math.pow(this.lat-closestOne[0],2)+Math.pow(this.lng-closestOne[1],2))
       var currDist = 0.0
+      var vm = this
       this.navigationArray.forEach(element => {
         currDist = Math.sqrt(Math.pow(this.lat-element.lat,2)+Math.pow(this.lng-element.lng,2))
         if (currDist<closestDistance){
           closestOne = [element.lng, element.lat]
         }
-        
+        console.log(element)
+      if (element.typ == 1)
+      {
+        NavOne.push(element)
+      }
+      else if(element.typ == 2){
+        NavTwo.push(element)
+      }
+      else {
+        NavThree.push(element)
+      }
+      console.log(NavOne)
+      console.log(NavTwo)
+      console.log(NavThree)
+      
       });
+      console.log(NavOne)
+      console.log(NavTwo)
+      console.log(NavThree)
+      this.$store.state.example.navigOne = NavOne
+      this.$store.state.example.navigTwo = NavTwo
+      this.$store.state.example.navigThree = NavThree
+      console.log(this.$store.state.example.navigThree)
+      console.log(this.$store.state.example.navigTwo)
+      console.log(this.$store.state.example.navigOne)
       return closestOne
     }
   }
