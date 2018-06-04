@@ -25,23 +25,6 @@
       methods:{
         getData(){
           console.log("getData");
-          let url = 'https://bystrzyca.herokuapp.com/api/v1/trasas?format=json';
-          const resultArray = [];
-          axios.get(url)
-            .then( response => {
-              // this.paths = response.data;
-              var res = response.data;
-              console.log(res)
-              this.$store.state.example.touristPaths = res;
-              return response;});
-        url = 'http://bystrzyca.herokuapp.com/api/v1/obiekt_w_trasies';
-        axios.get(url)
-            .then( response => {
-              // this.paths = response.data;
-              let res = response.data;
-              console.log(res)
-              this.$store.state.example.touristPathsElements = res;
-              return response;});
         }
       },
       created(){

@@ -29,7 +29,23 @@ export const fetchObjects = (state, vm) => {
     }).then(()=>{
       vm.$store.dispatch('example/setMarkers',vm);
     });
-
+    url = 'https://bystrzyca.herokuapp.com/api/v1/trasas?format=json';
+    const resultArray = [];
+    vm.axios.get(url)
+      .then(response => {
+        // this.paths = response.data;
+        var res = response.data;
+        vm.$store.state.example.touristPaths = res;
+        return response;
+      });
+    url = 'http://bystrzyca.herokuapp.com/api/v1/obiekt_w_trasies';
+    vm.axios.get(url)
+      .then(response => {
+        // this.paths = response.data;
+        let res = response.data;
+        vm.$store.state.example.touristPathsElements = res;
+        return response;
+      });
 };
 
 export const setMarkers = (state, vm) => {

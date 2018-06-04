@@ -13,10 +13,10 @@ export default {
   data() {
     return {
       cards: [
-        { nazwa: 'Jak dojechać?', link: '../assets/dojazd.png', destination: '/arrival' },
-        { nazwa: 'Mapa', link: '../assets/mapka.jpg',  destination: '/map' },
-        { nazwa: 'Ścieżki', link: '../assets/sciezki.jpg',  destination: '/officialPaths' },
-        { nazwa: 'Ciekawe miejsca', link: '../assets/palac-krobielowice.jpg', destination: 'interestingPlacesMenu' },
+        { nazwa: 'Jak dojechać?', link: 'https://preview.ibb.co/hTGMyT/dojazd.png', destination: '/arrival' },
+        { nazwa: 'Mapa', link: 'https://preview.ibb.co/kYgAso/mapka.jpg',  destination: '/map' },
+        { nazwa: 'Ścieżki', link: 'https://preview.ibb.co/kpTZJT/sciezki.jpg',  destination: '/officialPaths' },
+        { nazwa: 'Ciekawe miejsca', link: 'https://preview.ibb.co/mTEVso/palac_krobielowice.jpg', destination: 'interestingPlacesMenu' },
       ],
       pageTitle: 'Dolina Bystrzycy'
     };

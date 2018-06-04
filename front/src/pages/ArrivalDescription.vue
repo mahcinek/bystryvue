@@ -7,9 +7,6 @@
       <p>
         {{ description }}
       </p>
-    <q-card-media class="card-img" style="position: absolute; bottom: 0px; height: 40%">
-      <img :src=lowerImagePath style="height: 100%">
-    </q-card-media>
   </q-card>
   </q-page>
 </template>
@@ -22,7 +19,7 @@
           description: "Park Krajobrazowy \"Dolina Bystrzycy\" obejmuje tereny Kątów Wrocławskich, Miękinii, " +
                         "Mietkowa oraz Sobótki. Na teren Parku można dojechać koleją (stacja kolejowa w Kątach " +
                         "Wrocławskich), liniami wrocławskiego MPK nr 109, 609 i 917, samochodem oraz rowerem.",
-          upperImagePath: '../assets/dojazdGora.png' ,
+          upperImagePath: 'https://image.ibb.co/mfa6yT/dojazd_Gora.png' ,
           lowerImagePath: '../assets/dojazdDol.png' ,
           pageTitle: ''
         };
