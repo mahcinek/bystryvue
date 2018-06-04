@@ -1,8 +1,8 @@
 <template>
-  <q-page fullscreen class="qpage">
-    <GmapMap
-    :center="{lat:51.000708, lng:16.753288}"
-    :zoom="12"
+  <q-page fullscreen>
+    <GmapMap v-bind:class='{desktop: $q.platform.is.desktop }'
+    :center="{lat:51.060708, lng:16.803288}"
+    :zoom="11"
     map-type-id="terrain"
     style="
       width: 100%;
@@ -114,10 +114,7 @@
 </script>
 
 <style scoped>
-  .qpage{
-    width: 100%;
-  }
   .desktop{
-    max-width: 500px;
+    max-width: 800px;
   }
 </style>
