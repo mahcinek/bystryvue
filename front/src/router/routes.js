@@ -17,6 +17,7 @@ export default [
       { path: '/touristAttractionsMenu', component: () => import('pages/TouristAttractionsMenu') },
       { path: '/pathDescription/:id', component: () => import('pages/PathDescription') },
       { path: '/details/:id', component: () => import('pages/CardItemDetails') },
+      { path: '/about', component: () => import('pages/AboutUs') },
     ],
   },
 
