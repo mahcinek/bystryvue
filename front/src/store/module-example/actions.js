@@ -7,6 +7,7 @@ export const fetchObjects = (state, vm) => {
       }).then(() =>{
         vm.$store.state.example.objects.forEach(function (obj) {
           vm.$set(obj, 'destination', 'details/' + obj.id);
+          vm.$set(obj, 'links',[]);
           obj.dlugosc_geograficzna = obj.dlugosc_geograficzna/1000;
           obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
         });
@@ -19,6 +20,7 @@ export const fetchObjects = (state, vm) => {
           var i;
           for(i = 0; i < vm.$store.state.example.objects.length; i++){
             if(vm.$store.state.example.objects[i].id == response.data[r].obiekt_id){
+              vm.$store.state.example.objects[i].links.push(response.data[r].zdjecie_link);
               vm.$store.state.example.objects[i].link = response.data[r].zdjecie_link;
             }
           }

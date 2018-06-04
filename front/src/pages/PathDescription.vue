@@ -48,6 +48,7 @@
         var pathtObject = this.$store.state.example.touristPaths[id-1]
         this.pageTitle= pathtObject.nazwa
         this.description= pathtObject.opis
+        this.upperImagePath= pathtObject.link
         var arr = this.$store.state.example.touristPathsElements['path'+id]
         console.log(arr)
         this.navigationArray=arr

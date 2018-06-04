@@ -6,7 +6,8 @@
                   :imagePath="card.link"
                   :key="card.id"
                   :destination = "card.destination"
-                  :id="card.id">
+                  :id="card.id"
+                  v-show="card.link != null">
   </MenuCardItem>
 </q-page>
 </template>
