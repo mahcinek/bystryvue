@@ -3,12 +3,13 @@
   <PathDescCard :description="description"
                   :upperImagePath="upperImagePath"
   ></PathDescCard>
-   <q-btn
+   <q-btn class = "btn"
+          v-bind:class='{desktop: $q.platform.is.desktop }'
           @click="goToArrival"
           label="Zaprowadź mnie tam"
           text-color="white"
           color="secondary"
-          style="width: 100%; max-width: 800px; position:fixed; bottom: 0px;">
+          >
         </q-btn>
   </q-page>
 </template>
@@ -62,5 +63,18 @@
 </script>
 
 <style scoped>
+  .btn{
+    width: 100%;
+    position:fixed;
+    bottom: 0px;
+  }
+  .desktop{
+    max-width: 800px;
+  }
 
+
+  /*
+  style="width: 100%; max-width: 800px; position:fixed; bottom: 0px;"
+
+   */
 </style>

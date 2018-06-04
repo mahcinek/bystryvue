@@ -47,12 +47,12 @@
 
         <p>{{description}}
         </p>
-        <q-btn
+        <q-btn class="btn" v-bind:class='{desktop: $q.platform.is.desktop }'
           @click="goToArrival"
           label="Zaprowadź mnie tam"
           text-color="white"
           color="secondary"
-          style="width: 100%; max-width: 800px; position:fixed; bottom: 0px;">
+        >
         </q-btn>
       </q-card>
   </q-page>
@@ -158,10 +158,20 @@
 </script>
 
 <style scoped>
-p {
-  background-color: #00897B;
-  color: white;
-  /*padding-bottom: 20px;*/
-  margin-bottom: 35px;
-}
+  p {
+    background-color: #00897B;
+    color: white;
+    /*padding-bottom: 20px;*/
+    margin-bottom: 35px;
+  }
+
+  /*style="width: 100%; max-width: 800px; position:fixed; bottom: 0px;"*/
+  .btn{
+    width: 100%;
+    position:fixed;
+    bottom: 0px;
+  }
+  .desktop{
+    max-width: 800px;
+  }
 </style>

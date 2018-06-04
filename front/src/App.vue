@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class='{desktop: $q.platform.is.desktop }'>
     <!--<navigationBar></navigationBar>-->
     <router-view></router-view>
   </div>
@@ -37,7 +37,11 @@ export default {
       /*margin: auto;*/
     /*}*/
   /*}*/
-  #app{ /* krótksza wersja */
+  /*#app{ !* krótksza wersja *!*/
+    /*max-width: 800px;*/
+    /*margin: auto;*/
+  /*}*/
+  .desktop{
     max-width: 800px;
     margin: auto;
   }
