@@ -1,5 +1,5 @@
 <template>
-  <q-page fullscreen>
+  <q-page fullscreen class="qpage">
     <GmapMap
     :center="{lat:51.000708, lng:16.753288}"
     :zoom="12"
@@ -114,4 +114,10 @@
 </script>
 
 <style scoped>
+  .qpage{
+    width: 100%;
+  }
+  .desktop{
+    max-width: 500px;
+  }
 </style>
