@@ -16,6 +16,14 @@
           <q-icon name="arrow back" />
         </q-btn>
 
+        <q-btn
+          flat
+          dense
+          round
+          v-if=!showBtn
+          class="invisible"
+        ></q-btn>
+
         <q-toolbar-title align="center">
          {{pageTitle}}
         </q-toolbar-title>
@@ -67,6 +75,24 @@
           </q-popover>
         </q-btn>
 
+        <q-btn
+          flat
+          dense
+          round
+          @click="goToAbout"
+          aria-label="Menu"
+          v-if=!showBtn
+        >
+          <q-icon name="info" />
+        </q-btn>
+
+        <q-btn
+          flat
+          dense
+          round
+          v-if=invisibleButton
+          class="invisible"
+        ></q-btn>
 
 
       </q-toolbar>
@@ -102,6 +128,9 @@ export default {
     },
     isNaviagation: function(){
       return this.$store.state.example.isNaviagation
+    },
+    invisibleButton: function () {
+      return this.showBtn && !this.isMapPage;
     }
   },
   watch: {
@@ -119,6 +148,9 @@ export default {
     openURL,
     goBack() {
       this.$router.go(-1)
+    },
+    goToAbout() {
+      this.$router.push('/about');
     },
     setMode (){
       if (this.walkingOrDriving === true)
