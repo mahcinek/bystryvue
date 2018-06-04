@@ -56,24 +56,6 @@
             </q-list>
           </q-popover>
         </q-btn>
-        <q-btn
-          flat
-          round
-          dense
-          icon="more_vert"
-          v-if=isNaviagation
-          @change="setMode">
-            <q-popover class="q-itemColor">
-            <q-list style="min-width: 150px" >
-              <q-item class="q-itemColor">
-                <q-item-side left>
-                  <q-toggle v-model="walkingOrDriving" ></q-toggle>
-                </q-item-side>
-                <q-item-main label="Chodzenie" />
-              </q-item>
-            </q-list>
-          </q-popover>
-        </q-btn>
 
         <q-btn
           flat
