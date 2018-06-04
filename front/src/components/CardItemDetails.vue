@@ -22,7 +22,10 @@
           color="white"
           style="width: 100%; height: 45%;"
           >
-          <q-carousel-slide :img-src=images ></q-carousel-slide>
+          <q-carousel-slide v-for="link in links"
+                            :img-src=link
+                            :key="link"
+          ></q-carousel-slide>
           <q-carousel-control
             slot="control-button"
             slot-scope="carousel"
@@ -84,14 +87,14 @@
         description: function(){
           return this.obj.opis;
         },
-        images: function(){
-          return this.obj.link;
-        },
         lat: function () {
           return this.obj.dlugosc_geograficzna;
         },
         lng: function () {
           return this.obj.szerokosc_geograficzna;
+        },
+        links: function(){
+          return this.obj.links;
         }
       },
       methods: {
@@ -104,7 +107,7 @@
           console.log("Klikniete");
         },
         togFS(slide){
-          this.modal_source = this.images[slide]
+          this.modal_source = this.obj.links[slide]
           this.opened=true
         },
         addOne(){
