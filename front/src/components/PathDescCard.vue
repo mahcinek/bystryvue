@@ -28,5 +28,8 @@
   p {
     color: white;
     padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
   }
 </style>

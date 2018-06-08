@@ -163,6 +163,9 @@
     color: white;
     /*padding-bottom: 20px;*/
     margin-bottom: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
   }
 
   /*style="width: 100%; max-width: 800px; position:fixed; bottom: 0px;"*/

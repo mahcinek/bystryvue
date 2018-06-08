@@ -36,6 +36,9 @@
     color: white;
     overflow: auto;
     height: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
   }
   .card-img{
     width: 100%;
