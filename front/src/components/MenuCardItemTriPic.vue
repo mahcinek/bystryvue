@@ -32,11 +32,12 @@
 </script>
 
 <style scoped>
-  /*.desktop{*/
-    /*height: 400px;*/
-  /*}*/
+
   .card{
-    height: 35vh;
+    height: 30.8vh;
+  }
+  .desktop{
+    height: 500px;
   }
 /*  @media screen and (max-height: 500px) {
     .card{

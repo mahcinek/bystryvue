@@ -1,14 +1,17 @@
 <template>
    <q-page>
      <div class="padding_border">
-     <p class="center">Aplikacja powstała w ramach zajęć zespołowego przedsięwzięcia inżynierskiego studentów Politechniki&nbspWrocławskiej we&nbspwspółpracy&nbspz
-     </p>
-       <ul>
-        <li class="white">Akademią Sztuk Pięknych we Wrocławiu</li>
-       <li class="white">Dolnośląskim Zespołem Parków Krajobrazowych</li>
-       </ul>
+       <p>
+       Właścicielem aplikacji jest Dolnośląski Zespół Parków Krajobrazowych.
+       </p>
+       <p>
+       Pomysłodawcą przedsięwzięcia jest dr hab. Stanisław Sasak, profesor Akademii Sztuk Pięknych im. Eugeniusza Gepperta we Wrocławiu.
+       </p>
+       <p>
+       Aplikacja została wykonana jako Zespołowe Przedsięwzięcie Inżynierskie na Wydziale Informatyki i Zarządzania Politechniki Wrocławskiej.
+       </p>
        <q-list no-border>
-         <q-list-header class="white_center">SUPER DEVELOPER TEAM:</q-list-header>
+         <q-list-header class="white">Wykonawcy:</q-list-header>
          <q-item>
            <q-item-side icon="person" color="white" />
            <q-item-main class="white">Jarzębski Filip</q-item-main>
@@ -26,6 +29,15 @@
            <q-item-main class="white"  >Piwek Marcin</q-item-main>
          </q-item>
        </q-list>
+       <br>
+       <p>
+         Prowadzący: dr inż. Ziemowit Nowak
+       </p>
+       <p>
+         Autorem fotografii obiektów architektonicznych jest dr hab. Stanisław Sasak.<br>
+         Autorem pozostałych fitografii jest mgr inż. Piotr Śnigucki, dyrektor DZPK.<br>
+         Fotografie historyczne pobierane są z serwisu dolny-slask.org.pl
+       </p>
      </div>
    </q-page>
 </template>
