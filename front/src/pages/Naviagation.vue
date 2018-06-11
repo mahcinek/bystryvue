@@ -34,7 +34,7 @@
     </div>
   </q-modal-layout>
 </q-modal>
-  <GmapMap
+  <GmapMap v-bind:class='{desktop: $q.platform.is.desktop }'
   :center="{lat:lat, lng:lng}"
   :zoom="12"
   map-type-id="terrain"
@@ -88,7 +88,7 @@ import DirectionsRenderer from './DirectionsRenderer.js'
 export default {
   components: {DirectionsRenderer},
   data() {
-        return{ 
+        return{
           navigationPoint: [0.1, 0.1],
           navigationType: '',
           navigationArray: [[0.0, 0.0], [0.1, 0.1]],
@@ -177,7 +177,7 @@ export default {
       this.directionsDisplay.setMap(this.$refs.map.$mapObject)
       var vm = this
       vm.directionsService.route({
-        origin: {lat: this.lat, 
+        origin: {lat: this.lat,
                 lng: this.lng}, // Can be coord or also a search query
         destination: {lat: this.navigationPoint[0],
                       lng: this.navigationPoint[1]},
@@ -201,7 +201,7 @@ export default {
       this.directionsDisplay.setMap(this.$refs.map.$mapObject)
       var vm = this
       vm.directionsService.route({
-        origin: {lat: this.lat, 
+        origin: {lat: this.lat,
                 lng: this.lng}, // Can be coord or also a search query
         destination: {lat: this.navigationPoint[0],
                       lng: this.navigationPoint[1]},
@@ -255,7 +255,7 @@ export default {
       console.log(NavOne)
       console.log(NavTwo)
       console.log(NavThree)
-      
+
       });
       console.log(NavOne)
       console.log(NavTwo)
@@ -276,6 +276,7 @@ export default {
 </script>
 
 <style scoped>
-
-
+  .desktop{
+    max-width: 1000px;
+  }
 </style>
