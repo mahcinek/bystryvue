@@ -42,7 +42,7 @@ export default {
     /*margin: auto;*/
   /*}*/
   .desktop{
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
   }
   body{
