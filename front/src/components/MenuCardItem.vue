@@ -34,8 +34,11 @@ export default {
 
 <style scoped>
 
-  .desktop{
+/*  .desktop{
     height: 400px;
+  }*/
+  .card{
+    height: 35vh;
   }
 /*
   @media screen and (max-height: 500px) {
