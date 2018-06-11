@@ -20,7 +20,7 @@
           infinite
           autoplay
           color="white"
-          style="width: 100%; height: 45%;"
+          style="width: 100%; height: 60vh;"
           >
           <q-carousel-slide v-for="link in links"
                             :img-src=link

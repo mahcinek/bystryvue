@@ -1,5 +1,5 @@
 <template>
-   <q-page>
+   <q-page style="background-color: #00897B">
      <div class="padding_border">
        <p>
        Właścicielem aplikacji jest Dolnośląski Zespół Parków Krajobrazowych.
