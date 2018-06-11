@@ -163,8 +163,7 @@
     color: white;
     /*padding-bottom: 20px;*/
     margin-bottom: 35px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     text-align: justify;
   }
 
