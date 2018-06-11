@@ -60,18 +60,21 @@
 
     <div v-if="navigationType=='path'">
       <GmapMarker v-for="elem in n1"
+      :key="elem.id"
       :position="{lat:elem.lng, lng:elem.lat}"
       :clickable="true"
       @click="consoleLog2(elem.id)"
       :icon="'https://image.ibb.co/kBvdv8/palace_2.png'"
     />
       <GmapMarker v-for="elem in n2"
+      :key="elem.id"
       :position="{lat:elem.lng, lng:elem.lat}"
       :clickable="true"
       @click="consoleLog2(elem.id)"
       :icon="'https://image.ibb.co/hzY92o/tree.png'"
     />
       <GmapMarker v-for="elem in n3"
+      :key="elem.id"
       :position="{lat:elem.lng, lng:elem.lat}"
       :clickable="true"
       @click="consoleLog2(elem.id)"
@@ -261,7 +264,7 @@ export default {
       // console.log(NavOne)
       // console.log(NavTwo)
       // console.log(NavThree)
-      
+
       });
       // console.log(NavOne)
       // console.log(NavTwo)
