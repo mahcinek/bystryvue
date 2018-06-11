@@ -2,7 +2,7 @@
   <div>
   <q-btn @click="goTo(destination)" style="width: 100%; padding: 0;">
     <q-card square style="width: 100%; height: 100%;">
-      <q-card-media class="card">
+      <q-card-media class="card" v-bind:class='{desktop: $q.platform.is.desktop }'>
         <img :src=imagePath style="height: 100%;">
         <q-card-title slot="overlay">
           {{title}}
@@ -33,6 +33,11 @@ export default {
 </script>
 
 <style scoped>
+
+  .desktop{
+    height: 400px;
+  }
+/*
   @media screen and (max-height: 500px) {
     .card{
       height: 110px;
@@ -77,5 +82,5 @@ export default {
     .card{
       height: 400px;
     }
-  }
+  }*/
 </style>
