@@ -73,4 +73,9 @@ export default {
       height: 201px;
     }
   }
+  @media screen and (min-height: 900px) {
+    .card{
+      height: 400px;
+    }
+  }
 </style>
