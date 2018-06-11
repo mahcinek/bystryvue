@@ -37,7 +37,7 @@
     height: 30.8vh;
   }
   .desktop{
-    height: 500px;
+    height: 50vh;
   }
 /*  @media screen and (max-height: 500px) {
     .card{
