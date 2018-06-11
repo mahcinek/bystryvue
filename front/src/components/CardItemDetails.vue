@@ -175,6 +175,6 @@
     bottom: 0px;
   }
   .desktop{
-    max-width: 800px;
+    max-width: 1000px;
   }
 </style>
