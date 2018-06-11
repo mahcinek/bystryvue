@@ -95,6 +95,7 @@
         },
         links: function(){
           return this.obj.links;
+          //
         }
       },
       methods: {
