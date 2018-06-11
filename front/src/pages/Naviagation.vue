@@ -47,7 +47,7 @@
     ref="map"
 >
     <GmapMarker
-      v-if="navigationType == 'Point'"
+      v-if="navigationType == 'point'"
       :position="{lat:navigationPoint[0], lng:navigationPoint[1]}"
       :clickable="true"
       @click="nabig"
@@ -110,7 +110,12 @@ export default {
     this.$store.state.example.pageTitle = 'Nawigacja';
     this.navigationArray = this.$store.state.example.navigationArray;
     this.navigationType = this.$store.state.example.navigationType
-    this.navigationPoint = this.$store.state.example.navigationLongLat
+    console.log("nav point")
+    console.log(this.$store.state.example.navigationLongLat)
+    this.navigationPoint[0] = this.$store.state.example.navigationLongLat[0]
+    this.navigationPoint[1] = this.$store.state.example.navigationLongLat[1]
+    console.log("nav poitn 2")
+    console.log(this.navigationPoint)
     this.$store.state.example.isNaviagation = true;
   },
   mounted(){
@@ -132,10 +137,9 @@ export default {
       console.log("Klikniete");
     },
     consoleLog2: function(id){
-      console.log("aa")
       var vm = this;
       this.$store.dispatch('example/getObjectById', {vm: vm, id_param: id})
-      console.log(vm.Obj)
+      // console.log(vm.Obj)
       this.desc = this.Obj.opis
       this.title = this.Obj.nazwa
       this.selectedLat = this.Obj.dlugosc_geograficzna
@@ -169,9 +173,11 @@ export default {
       window.open("geo:"+addressLongLat);
     },
     getRoute: function () {
-      if (this.navigationType == 'Point'){
-      console.log([this.lat, this.lng])
-      console.log([this.navigationPoint[0], this.navigationPoint[1]])
+      console.log("Nav type")
+      console.log(this.navigationType)
+      if (this.navigationType == 'point'){
+      // console.log([this.lat, this.lng])
+      // console.log([this.navigationPoint[0], this.navigationPoint[1]])
       this.directionsService = new google.maps.DirectionsService()
       this.directionsDisplay = new google.maps.DirectionsRenderer()
       this.directionsDisplay.setMap(this.$refs.map.$mapObject)
@@ -183,7 +189,7 @@ export default {
                       lng: this.navigationPoint[1]},
         travelMode: vm.DirMode
       }, function (response, status) {
-        console.log(status)
+        // console.log(status)
         if (status === 'OK') {
           vm.directionsDisplay.setDirections(response) // draws the polygon to the map
         } else {
@@ -192,10 +198,10 @@ export default {
       })
       }
       else {
-        console.log(this.navigationArr)
+        // console.log(this.navigationArr)
         this.navigationPoint=this.findTheClosestOne()
-        console.log([this.lat, this.lng])
-      console.log([this.navigationPoint[0], this.navigationPoint[1]])
+        // console.log([this.lat, this.lng])
+      // console.log([this.navigationPoint[0], this.navigationPoint[1]])
       this.directionsService = new google.maps.DirectionsService()
       this.directionsDisplay = new google.maps.DirectionsRenderer()
       this.directionsDisplay.setMap(this.$refs.map.$mapObject)
@@ -207,11 +213,11 @@ export default {
                       lng: this.navigationPoint[1]},
         travelMode: vm.DirMode
       }, function (response, status) {
-        console.log(status)
+        // console.log(status)
         if (status === 'OK') {
           vm.directionsDisplay.setDirections(response) // draws the polygon to the map
         } else {
-          console.log('Directions request failed due to ' + status)
+          // console.log('Directions request failed due to ' + status)
         }
       })
       }
@@ -252,20 +258,20 @@ export default {
       else {
         NavThree.push(element)
       }
-      console.log(NavOne)
-      console.log(NavTwo)
-      console.log(NavThree)
+      // console.log(NavOne)
+      // console.log(NavTwo)
+      // console.log(NavThree)
       
       });
-      console.log(NavOne)
-      console.log(NavTwo)
-      console.log(NavThree)
+      // console.log(NavOne)
+      // console.log(NavTwo)
+      // console.log(NavThree)
       this.$store.state.example.navigOne = NavOne
       this.$store.state.example.navigTwo = NavTwo
       this.$store.state.example.navigThree = NavThree
-      console.log(this.$store.state.example.navigThree)
-      console.log(this.$store.state.example.navigTwo)
-      console.log(this.$store.state.example.navigOne)
+      // console.log(this.$store.state.example.navigThree)
+      // console.log(this.$store.state.example.navigTwo)
+      // console.log(this.$store.state.example.navigOne)
       return closestOne
     }
   }
