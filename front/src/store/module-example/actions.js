@@ -1,6 +1,6 @@
 
 export const fetchObjects = (state, vm) => {
-    var url = 'http://bystrzyca.herokuapp.com/api/v1/obiekts';
+    var url = 'https://bystrzyca.herokuapp.com/api/v1/obiekts';
     vm.axios.get(url)
       .then( response => {
         vm.$store.state.example.objects = response.data;
@@ -12,7 +12,7 @@ export const fetchObjects = (state, vm) => {
           obj.szerokosc_geograficzna = obj.szerokosc_geograficzna/1000;
         });
     }).then(() =>{
-    url = 'http://bystrzyca.herokuapp.com/api/v1/zdjecies';
+    url = 'https://bystrzyca.herokuapp.com/api/v1/zdjecies';
     vm.axios.get(url)
       .then( response => {
         var r;
@@ -38,7 +38,7 @@ export const fetchObjects = (state, vm) => {
         vm.$store.state.example.touristPaths = res;
         return response;
       });
-    url = 'http://bystrzyca.herokuapp.com/api/v1/obiekt_w_trasies';
+    url = 'https://bystrzyca.herokuapp.com/api/v1/obiekt_w_trasies';
     vm.axios.get(url)
       .then(response => {
         // this.paths = response.data;
